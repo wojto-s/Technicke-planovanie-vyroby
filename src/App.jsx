@@ -29,7 +29,7 @@ function App() {
   useEffect(() => {
     if (vyroba.length > 0) {
       localStorage.setItem("ITEMS", JSON.stringify(vyroba));
-      exportVyroba(vyroba);
+      //exportVyroba(vyroba);
     }
   }, [vyroba]);
 
@@ -59,10 +59,10 @@ function App() {
     };
     setVyroba((currentVyroba) => [...currentVyroba, newData]);
   }
-
+  /*
   function exportVyroba(data) {
     window.electron.saveJson(data);
-  }
+  }*/
 
   //Všetky výrobky
   const [vyrobky, setVyrobky] = useState([]);
