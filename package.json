@@ -1,0 +1,59 @@
+{
+  "name": "tpv-app",
+  "private": true,
+  "version": "0.0.0",
+  "main": "electron/electron.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "electron": "wait-on tcp:3000 && cross-env IS_DEV=true electron .",
+    "electron:pack": "electron-builder --dir",
+    "electron:dev": "concurrently -k \"cross-env BROWSER=none npm run dev\" \"npm run electron\"",
+    "electron:builder": "electron-builder",
+    "build:for:electron": "cross-env ELECTRON=true vite build",
+    "app:build": "npm run build:for:electron && npm run electron:builder"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "electron-router-dom": "^2.1.0",
+    "jquery": "^3.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.2",
+    "wait-on": "^7.2.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^3.0.0",
+    "electron": "^22.3.27",
+    "electron-builder": "^24.13.3",
+    "vite": "^4.0.0"
+  },
+  "build": {
+    "appId": "com.devname.package",
+    "productName": "TPV",
+    "copyright": "Copyright © 2023 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "node_modules/react-router-dom/**/*",
+      "node_modules/electron-router-dom/**/*",
+      "dist_electron/**/*",
+      "electron/preload.js"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist_electron"
+    }
+  }
+}

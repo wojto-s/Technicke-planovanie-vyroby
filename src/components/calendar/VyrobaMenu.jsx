@@ -1,0 +1,66 @@
+import { NavContent } from "../navigation/NavContent";
+
+export function VyrobaMenu({ date, setNewDate }) {
+  const today = new Date();
+  const todayDateString = today.toDateString();
+  const currentDateString = date.toDateString();
+
+  // Najviac o koľko dní môžeme ísť dopredu
+  today.setDate(today.getDate() + 7);
+  const todayPlus = new Date(today);
+
+  // Funkcia na nasledujúci deň
+  function handleAddDay(e) {
+    if (date <= todayPlus) {
+      const nextDate = new Date(date);
+      nextDate.setDate(nextDate.getDate() + 1);
+      setNewDate(nextDate);
+    }
+  }
+
+  // Funkcia na predošlý deň
+  function handleRemoveDay(e) {
+    if (currentDateString !== todayDateString) {
+      const nextDate = new Date(date);
+      nextDate.setDate(nextDate.getDate() - 1);
+      setNewDate(nextDate);
+    }
+  }
+
+  return (
+    <article className="vyroba-menu">
+      <a
+        className="btn-custom d-block d-sm-block d-md-none"
+        data-bs-toggle="offcanvas"
+        href="#offcanvasExample"
+        role="button"
+        aria-controls="offcanvasExample"
+      >
+        <i className="icofont-meeting-add"></i>
+      </a>
+      <div
+        className="offcanvas offcanvas-start"
+        tabIndex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <button
+          type="button"
+          className="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+        <NavContent />
+      </div>
+      <div className="vyroba-info d-flex justify-content-between align-items-center">
+        <button className="btn-custom" onClick={handleRemoveDay}>
+          prev day
+        </button>
+        <div className="fw-bold fs-5">{date.toLocaleDateString()}</div>
+        <button className="btn-custom" onClick={handleAddDay}>
+          next day
+        </button>
+      </div>
+    </article>
+  );
+}
