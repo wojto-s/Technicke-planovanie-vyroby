@@ -1,36 +1,10 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-
-export function NavContent() {
+export function NavContent({ active }) {
   function handleClearStorage(e) {
     localStorage.clear();
   }
 
-  const location = useLocation();
-  const [active, setActive] = useState("/");
-
-  useEffect(() => {
-    setActive(location.pathname);
-    document.title = getTitle(location.pathname);
-  }, [location.pathname]);
-
-  const getTitle = (path) => {
-    switch (path) {
-      case "/historia":
-        return "TPV | História";
-      case "/stroje":
-        return "TPV | Stroje";
-      case "/vyrobky":
-        return "TPV | Výrobky";
-      case "/nova-vyroba":
-        return "TPV | Nová výroba";
-      default:
-        return "TPV";
-    }
-  };
-
   return (
-    <article className="navigacka-menu d-flex flex-wrap align-content-between justify-content-center">
+    <article className="navigacka-menu d-none d-sm-none d-lg-flex flex-wrap align-content-between justify-content-center">
       <div>
         <h1>TPV</h1>
         <h5>Technické plánovanie výroby</h5>

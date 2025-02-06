@@ -28,9 +28,9 @@ export function NewVyrobaParams({
   };
 
   return (
-    <section className="new-vyroba-params">
+    <section className="new-vyroba-params mt-2">
       <h3>{param}</h3>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex flex-wrap justify-content-center">
         {availableParam.map((params) => {
           const isDisabled = disabledParams.includes(params);
           return (

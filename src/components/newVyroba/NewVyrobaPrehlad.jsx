@@ -178,9 +178,9 @@ export function NewVyrobaPrehlad({
   }
 
   return (
-    <section className="new-vyroba-prehlad d-flex align-content-between justify-content-center flex-wrap">
+    <section className="new-vyroba-prehlad mt-4 d-flex align-content-between justify-content-center flex-wrap">
       <h3>Prehľad</h3>
-      <div className="w-100">
+      <div>
         <h5 className="mt-5">{currentVyrobok.cisloVykresu}</h5>
         <h5>{findNazov(currentVyrobok.cisloVykresu)}</h5>
         <h6 className="fw-normal mt-4">

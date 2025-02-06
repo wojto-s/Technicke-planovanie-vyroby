@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./style.css";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { Vyroba } from "./components/Vyroba";
 import { Historia } from "./components/Historia";
@@ -99,11 +99,9 @@ function App() {
   //ROUTY
   return (
     <div className="d-flex">
-      <HashRouter>
-        <div className="d-none d-sm-none d-md-block">
-          <Navigation />
-        </div>
-        <div className="col-10">
+      <BrowserRouter>
+        <Navigation />
+        <div className="col-sm-12 col-md-10">
           <Routes>
             <Route
               index
@@ -152,7 +150,7 @@ function App() {
             />
           </Routes>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

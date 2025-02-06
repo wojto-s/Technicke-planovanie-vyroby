@@ -54,7 +54,7 @@ export function NewVyrobaVyrobky({
       <div className="scroll-box">
         {filteredVyrobky.map((vyrobok) => (
           <article
-            className={`vyrobok-card m-3 ${
+            className={`vyrobok-card mb-3 ${
               currentCisloVykresu === vyrobok.cisloVykresu ? "active-elem" : ""
             }`}
             key={vyrobok.cisloVykresu}

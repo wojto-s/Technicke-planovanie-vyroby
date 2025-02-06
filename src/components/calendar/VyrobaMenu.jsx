@@ -29,29 +29,6 @@ export function VyrobaMenu({ date, setNewDate }) {
 
   return (
     <article className="vyroba-menu">
-      <a
-        className="btn-custom d-block d-sm-block d-md-none"
-        data-bs-toggle="offcanvas"
-        href="#offcanvasExample"
-        role="button"
-        aria-controls="offcanvasExample"
-      >
-        <i className="icofont-meeting-add"></i>
-      </a>
-      <div
-        className="offcanvas offcanvas-start"
-        tabIndex="-1"
-        id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel"
-      >
-        <button
-          type="button"
-          className="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-        <NavContent />
-      </div>
       <div className="vyroba-info d-flex justify-content-between align-items-center">
         <button className="btn-custom" onClick={handleRemoveDay}>
           prev day
