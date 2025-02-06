@@ -9,6 +9,7 @@ export function NewVyroba({
   addVyroba,
   tableIndex,
   vyroba,
+  setVyroba,
   vyrobky,
   vyrobkySpecs,
   isEditing,
@@ -113,6 +114,7 @@ export function NewVyroba({
   });
 
   const [cardName, setCardName] = useState("");
+  const [editID, setEditID] = useState(0);
   useEffect(() => {
     if (isEditing) {
       setCardName("Edituješ výrobu");
@@ -123,6 +125,7 @@ export function NewVyroba({
       setStartDate(new Date(currentEdit.workPeriods[0].day));
       setCurrentStartTime(parseInt(currentEdit.workPeriods[0].startTime));
       setCurrentPocetKusov(currentEdit.pocetKusov);
+      setEditID(currentEdit.id);
     } else {
       setCardName("Pridaj novú výrobu");
     }
@@ -193,7 +196,9 @@ export function NewVyroba({
             vyrobkySpecs={vyrobkySpecs}
             addVyroba={addVyroba}
             vyroba={vyroba}
+            setVyroba={setVyroba}
             isEditing={isEditing}
+            editID={editID}
           />
         </div>
       </div>

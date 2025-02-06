@@ -105,7 +105,14 @@ function App() {
           <Routes>
             <Route
               index
-              element={<Vyroba tableIndex={tableIndex} vyroba={vyroba} />}
+              element={
+                <Vyroba
+                  tableIndex={tableIndex}
+                  vyroba={vyroba}
+                  setEditing={setEditing}
+                  setCurrentEdit={setCurrentEdit}
+                />
+              }
             />
             <Route
               path="/home"
@@ -114,6 +121,8 @@ function App() {
                   tableIndex={tableIndex}
                   vyroba={vyroba}
                   vyrobky={vyrobky}
+                  setEditing={setEditing}
+                  setCurrentEdit={setCurrentEdit}
                 />
               }
             />
@@ -141,6 +150,7 @@ function App() {
                   addVyroba={addVyroba}
                   tableIndex={tableIndex}
                   vyroba={vyroba}
+                  setVyroba={setVyroba}
                   vyrobky={vyrobky}
                   vyrobkySpecs={vyrobkySpecs}
                   isEditing={isEditing}

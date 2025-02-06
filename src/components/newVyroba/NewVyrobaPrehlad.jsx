@@ -6,7 +6,9 @@ export function NewVyrobaPrehlad({
   vyrobkySpecs,
   addVyroba,
   vyroba,
+  setVyroba,
   isEditing,
+  editID,
 }) {
   const calcDuration = (pocetKusov, poloha) => {
     let dlzkaVyroby = 0; //min
@@ -154,6 +156,24 @@ export function NewVyrobaPrehlad({
 
     if (!isConflict) {
       if (isEditing) {
+        setVyroba((prevItems) =>
+          prevItems.map((item) =>
+            item.id === editID
+              ? {
+                  ...item,
+                  ...currentVyrobok,
+                  workPeriods: workPeriods,
+                  nazovVyrobku: findNazov(currentVyrobok.cisloVykresu),
+                  duration: calcDuration(
+                    currentVyrobok.pocetKusov,
+                    currentVyrobok.cisloVykresu
+                  ),
+                  vyrobokBG: getBG(currentVyrobok.cisloVykresu),
+                }
+              : item
+          )
+        );
+        alert("Úprava prebehla úspešne");
       } else {
         addVyroba(
           currentVyrobok.cisloVykresu,
@@ -166,9 +186,8 @@ export function NewVyrobaPrehlad({
           calcDuration(currentVyrobok.pocetKusov, currentVyrobok.cisloVykresu),
           getBG(currentVyrobok.cisloVykresu)
         );
+        alert("Výroba úspešne pridaná");
       }
-
-      alert("Výroba úspešne pridaná");
     } else {
       alert("Výroba nebola pridaná kvôli časovému konfliktu");
     }

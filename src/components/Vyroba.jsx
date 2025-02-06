@@ -2,7 +2,7 @@ import { useState } from "react";
 import { VyrobaMenu } from "./calendar/VyrobaMenu";
 import { VyrobaCalendar } from "./calendar/VyrobaCalendar";
 
-export function Vyroba({ tableIndex, vyroba }) {
+export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
   let [newDate, setNewDate] = useState(new Date());
 
   return (
@@ -26,18 +26,24 @@ export function Vyroba({ tableIndex, vyroba }) {
               tableIndex={tableIndex}
               newDate={newDate}
               vyroba={vyroba}
+              setEditing={setEditing}
+              setCurrentEdit={setCurrentEdit}
             />
             <VyrobaCalendar
               strojId={"3os"}
               tableIndex={tableIndex}
               newDate={newDate}
               vyroba={vyroba}
+              setEditing={setEditing}
+              setCurrentEdit={setCurrentEdit}
             />
             <VyrobaCalendar
               strojId={"4os"}
               tableIndex={tableIndex}
               newDate={newDate}
               vyroba={vyroba}
+              setEditing={setEditing}
+              setCurrentEdit={setCurrentEdit}
             />
           </div>
         </div>

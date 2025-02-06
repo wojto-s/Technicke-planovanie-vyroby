@@ -1,4 +1,21 @@
-export function VyrobaCalendar({ strojId, tableIndex, newDate, vyroba }) {
+import { useNavigate } from "react-router-dom";
+
+export function VyrobaCalendar({
+  strojId,
+  tableIndex,
+  newDate,
+  vyroba,
+  setEditing,
+  setCurrentEdit,
+}) {
+  const navigate = useNavigate();
+
+  const handleStartEdit = (vyrobok) => {
+    setEditing(true);
+    setCurrentEdit(vyrobok);
+    navigate("/nova-vyroba");
+  };
+
   function getVyrobaCaledar(strojID, newDate) {
     // Vyfiltrujeme si produkty (čas, dátum, stroj)
     // Ukladáme do nového poľa, kde máme iba produkty k danému stroju a dátumu
@@ -23,7 +40,7 @@ export function VyrobaCalendar({ strojId, tableIndex, newDate, vyroba }) {
         if (relevantPeriod) {
           let rozdielCasov = endTime - startTime;
           if (rozdielCasov === 16) rozdielCasov++;
-          if (rozdielCasov === 1) {
+          if (rozdielCasov < 4) {
             return (
               <li
                 style={{
@@ -32,6 +49,7 @@ export function VyrobaCalendar({ strojId, tableIndex, newDate, vyroba }) {
                 }}
                 className={` tableRow ${vyrobaItem.vyrobokBG}`}
                 key={vyrobaItem.id}
+                onClick={(e) => handleStartEdit(vyrobaItem)}
               >
                 <div className="d-flex">
                   <p className="me-5 mb-0">{vyrobaItem.nazovVyrobku}</p>
@@ -48,6 +66,7 @@ export function VyrobaCalendar({ strojId, tableIndex, newDate, vyroba }) {
                 }}
                 className={` tableRow ${vyrobaItem.vyrobokBG}`}
                 key={vyrobaItem.id}
+                onClick={(e) => handleStartEdit(vyrobaItem)}
               >
                 <div>
                   <p className="mb-0">{vyrobaItem.nazovVyrobku}</p>
