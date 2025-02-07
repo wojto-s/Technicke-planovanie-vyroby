@@ -99,7 +99,8 @@ export function NewVyrobaPrehlad({
   //PRIDANIE DO DB
   function handleSubmit(e) {
     e.preventDefault();
-    if (currentVyrobok.cisloVykresu === 0) return; // ak nezadáme počet kusov tak sa nič nevykoná
+    if (currentVyrobok.pocetKusov == 0)
+      return alert("Výroba nebola pridaná pretože si nezadal počet kusov"); // ak nezadáme počet kusov tak sa nič nevykoná
 
     let isConflict = false;
 
