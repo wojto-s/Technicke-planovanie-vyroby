@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import "./style.css";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { Vyroba } from "./components/Vyroba";
 import { Historia } from "./components/Historia";
 import { Vyrobky } from "./components/Vyrobky";
 import { NewVyroba } from "./components/NewVyroba";
 import * as XLSX from "xlsx";
+import { createRoot } from "react-dom/client";
 
 function App() {
   // PRACOVNA DOBA
@@ -95,72 +96,67 @@ function App() {
   //console.log(vyroba);
   const [isEditing, setEditing] = useState(false);
   const [currentEdit, setCurrentEdit] = useState({});
-
   //ROUTY
   return (
     <div className="d-flex">
-      <BrowserRouter>
-        <Navigation />
-        <div className="col-sm-12 col-md-10">
-          <Routes>
-            <Route
-              index
-              element={
-                <Vyroba
-                  tableIndex={tableIndex}
-                  vyroba={vyroba}
-                  setEditing={setEditing}
-                  setCurrentEdit={setCurrentEdit}
-                />
-              }
-            />
-            <Route
-              path="/home"
-              element={
-                <Vyroba
-                  tableIndex={tableIndex}
-                  vyroba={vyroba}
-                  vyrobky={vyrobky}
-                  setEditing={setEditing}
-                  setCurrentEdit={setCurrentEdit}
-                />
-              }
-            />
-            <Route
-              path="/historia"
-              element={
-                <Historia
-                  vyroba={vyroba}
-                  setVyroba={setVyroba}
-                  setEditing={setEditing}
-                  setCurrentEdit={setCurrentEdit}
-                />
-              }
-            />
-            <Route
-              path="/vyrobky"
-              element={
-                <Vyrobky vyrobky={vyrobky} vyrobkySpecs={vyrobkySpecs} />
-              }
-            />
-            <Route
-              path="/nova-vyroba"
-              element={
-                <NewVyroba
-                  addVyroba={addVyroba}
-                  tableIndex={tableIndex}
-                  vyroba={vyroba}
-                  setVyroba={setVyroba}
-                  vyrobky={vyrobky}
-                  vyrobkySpecs={vyrobkySpecs}
-                  isEditing={isEditing}
-                  currentEdit={currentEdit}
-                />
-              }
-            />
-          </Routes>
-        </div>
-      </BrowserRouter>
+      <Navigation />
+      <div className="col-sm-12 col-md-10">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Vyroba
+                tableIndex={tableIndex}
+                vyroba={vyroba}
+                setEditing={setEditing}
+                setCurrentEdit={setCurrentEdit}
+              />
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <Vyroba
+                tableIndex={tableIndex}
+                vyroba={vyroba}
+                vyrobky={vyrobky}
+                setEditing={setEditing}
+                setCurrentEdit={setCurrentEdit}
+              />
+            }
+          />
+          <Route
+            path="/historia"
+            element={
+              <Historia
+                vyroba={vyroba}
+                setVyroba={setVyroba}
+                setEditing={setEditing}
+                setCurrentEdit={setCurrentEdit}
+              />
+            }
+          />
+          <Route
+            path="/vyrobky"
+            element={<Vyrobky vyrobky={vyrobky} vyrobkySpecs={vyrobkySpecs} />}
+          />
+          <Route
+            path="/nova-vyroba"
+            element={
+              <NewVyroba
+                addVyroba={addVyroba}
+                tableIndex={tableIndex}
+                vyroba={vyroba}
+                setVyroba={setVyroba}
+                vyrobky={vyrobky}
+                vyrobkySpecs={vyrobkySpecs}
+                isEditing={isEditing}
+                currentEdit={currentEdit}
+              />
+            }
+          />
+        </Routes>
+      </div>
     </div>
   );
 }
