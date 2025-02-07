@@ -38,7 +38,7 @@ export function VyrobaCalendar({
         const endTime = parseInt(relevantPeriod.endTime.split(":")[0]);
         // Ak sa záznam nachádza v správnom časovom úseku, tak si vypočítame rozdiel časov aby sme vedeli určíť výšku a pozíciu
         if (relevantPeriod) {
-          let rozdielCasov = endTime - startTime;
+          let rozdielCasov = endTime - startTime + 1;
           if (rozdielCasov === 16) rozdielCasov++;
           if (rozdielCasov < 4) {
             return (
