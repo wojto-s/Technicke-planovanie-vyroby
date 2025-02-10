@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 
-export function DesktopNav({ active }) {
+export function DesktopNav({ active, setEditing }) {
   function handleClearStorage(e) {
     localStorage.clear();
   }
+
+  const handleSetPridat = () => {
+    setEditing(false);
+  };
 
   return (
     <article className="navigacka-menu d-none d-sm-none d-lg-flex flex-wrap align-content-between justify-content-center">
@@ -18,7 +22,10 @@ export function DesktopNav({ active }) {
             active === "/" ? "active" : ""
           }`}
         >
-          <i className="icofont-ui-calendar me-2 ms-4"></i>Kalendár
+          <span>
+            <i class="fa-solid fa-calendar-days"></i>
+          </span>
+          Kalendár
         </Link>
         <Link
           to="/historia"
@@ -26,7 +33,9 @@ export function DesktopNav({ active }) {
             active === "/historia" ? "active" : ""
           }`}
         >
-          <i className="icofont-history me-2 ms-4"></i>
+          <span>
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </span>
           História
         </Link>
         <Link
@@ -36,7 +45,9 @@ export function DesktopNav({ active }) {
             active === "/stroje" ? "active" : ""
           }`}
         >
-          <i className="icofont-vehicle-crane me-2 ms-4"></i>
+          <span>
+            <i class="fa-solid fa-wrench"></i>
+          </span>
           Stroje
         </Link>
         <Link
@@ -45,7 +56,9 @@ export function DesktopNav({ active }) {
             active === "/vyrobky" ? "active" : ""
           }`}
         >
-          <i className="icofont-box me-2 ms-4"></i>
+          <span>
+            <i class="fa-solid fa-box-open"></i>
+          </span>
           Výrobky
         </Link>
         <Link
@@ -53,8 +66,11 @@ export function DesktopNav({ active }) {
           className={`nav-link nova-vyroba-nav mb-2 d-flex align-items-center ${
             active === "/nova-vyroba" ? "active" : ""
           }`}
+          onClick={handleSetPridat}
         >
-          <i className="icofont-meeting-add me-2 ms-4"></i>
+          <span>
+            <i class="fa-solid fa-plus"></i>
+          </span>
           Pridaj Výrobu
         </Link>
       </nav>

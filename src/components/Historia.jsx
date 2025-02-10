@@ -17,7 +17,7 @@ export function Historia({ vyroba, setVyroba, setEditing, setCurrentEdit }) {
   return (
     <div className="section-content">
       <CardHeader cardName={"História výroby"} />
-      <section className="scroll-box">
+      <section className="item-box scroll-box">
         {[...vyroba].reverse().map((vyr) => {
           const endElem = vyr.workPeriods.length - 1;
           return (

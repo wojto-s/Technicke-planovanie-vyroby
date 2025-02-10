@@ -19,17 +19,11 @@ export function NewVyrobaInfo({
     <section className="new-vyroba-info d-flex justify-content-center flex-column mt-3">
       <article>
         <h5>Dátum: </h5>
-        <input
-          type="date"
-          value={date}
-          onChange={handleDateChange}
-          className="ms-4"
-        />
+        <input type="date" value={date} onChange={handleDateChange} />
       </article>
       <article className="mt-3">
         <h5>Čas začiatku: </h5>
         <select
-          className="ms-2"
           onChange={(e) => setCurrentStartTime(e.target.value)}
           value={currentStartTime}
         >
@@ -45,7 +39,6 @@ export function NewVyrobaInfo({
         <input
           type="number"
           onChange={(e) => setCurrentPocetKusov(e.target.value)}
-          className="ms-4"
           value={currentPocetKusov}
         />
       </article>

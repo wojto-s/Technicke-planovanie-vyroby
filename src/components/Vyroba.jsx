@@ -20,7 +20,7 @@ export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
               ))}
             </ul>
           </section>
-          <div className="stroje d-flex">
+          <div className="stroje d-flex flex-wrap">
             <VyrobaCalendar
               strojId={"5os"}
               tableIndex={tableIndex}

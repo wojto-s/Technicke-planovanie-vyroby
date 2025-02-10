@@ -40,7 +40,7 @@ export function Vyrobky({ vyrobky, vyrobkySpecs }) {
           onChange={handleInputChange}
         />
       </section>
-      <section className="scroll-box">
+      <section className="item-box scroll-box">
         {filteredVyrobky.map((item) => (
           <div key={item.cisloVykresu} className="db-info  mb-3">
             <VyrobkyItem item={item} vyrobkySpecs={vyrobkySpecs} />

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { MobileNav } from "./navigation/MobileNav";
 import { DesktopNav } from "./navigation/DesktopNav";
 
-export function Navigation() {
+export function Navigation({ setEditing }) {
   const location = useLocation();
   const [active, setActive] = useState("/");
 
@@ -28,8 +28,8 @@ export function Navigation() {
   };
   return (
     <section className="navigacka">
-      <DesktopNav active={active} />
-      <MobileNav active={active} />
+      <DesktopNav active={active} setEditing={setEditing} />
+      <MobileNav active={active} setEditing={setEditing} />
     </section>
   );
 }

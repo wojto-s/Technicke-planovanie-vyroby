@@ -29,11 +29,21 @@ body {
   font-weight: bold;
 }
 
+@media (max-width: 480px) {
+  .btn-custom {
+    margin: 1em !important;
+  }
+}
+
 .btn-edit {
   color: var(--text);
   background-color: var(--primary);
   padding: 3px 5px;
   border-radius: 5px;
+}
+
+.btn-change-days {
+  font-size: 1.25em;
 }
 
 .search-bar {
@@ -100,8 +110,10 @@ body {
   border-radius: 0 20px 20px 0;
   transition: 0.2s ease-in-out;
 }
-.navigacka-menu nav i {
-  font-size: 30px;
+.navigacka-menu nav span {
+  font-size: 20px;
+  margin-right: 1em;
+  margin-left: 0.5em;
 }
 
 .navigacka-menu nav a:hover,
@@ -131,6 +143,7 @@ body {
   padding: 10px;
   background-color: var(--secondary);
   position: fixed;
+  z-index: 1;
   width: 100vw;
   bottom: 0;
 }
@@ -155,7 +168,6 @@ body {
   width: 100%;
   font-weight: bold;
   text-transform: uppercase;
-  overflow-x: scroll;
 }
 
 .stroje h3,
@@ -223,7 +235,27 @@ body {
   border: none;
 }
 
+@media (max-width: 480px) {
+  .vyroba,
+  .item-box {
+    margin-bottom: 5em;
+  }
+
+  .stroje {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+  }
+
+  .stroje .stroj {
+    border: none;
+    scroll-snap-align: start;
+  }
+}
+
+/*--------------------------------------*/
 /* KALENDAR VYROVKY BG*/
+/*--------------------------------------*/
 .greenBG {
   background-color: #008000;
   color: var(--text);
@@ -428,4 +460,15 @@ body {
 
 .new-vyroba-info select option:focus {
   background-color: pink;
+}
+
+@media (max-width: 480px) {
+  input[type="number"] {
+    width: 60%;
+    text-align: center;
+  }
+
+  .new-vyroba-prehlad {
+    margin-bottom: 5em;
+  }
 }

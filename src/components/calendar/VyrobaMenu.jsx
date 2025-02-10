@@ -29,11 +29,15 @@ export function VyrobaMenu({ date, setNewDate }) {
     <article className="vyroba-menu">
       <div className="vyroba-info d-flex justify-content-between align-items-center">
         <button className="btn-custom" onClick={handleRemoveDay}>
-          prev day
+          <span className="btn-change-days">
+            <i class="fa-solid fa-caret-left"></i>
+          </span>
         </button>
         <div className="fw-bold fs-5">{date.toLocaleDateString()}</div>
         <button className="btn-custom" onClick={handleAddDay}>
-          next day
+          <span className="btn-change-days">
+            <i class="fa-solid fa-caret-right"></i>
+          </span>
         </button>
       </div>
     </article>

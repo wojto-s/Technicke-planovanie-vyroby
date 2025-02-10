@@ -99,7 +99,7 @@ function App() {
   //ROUTY
   return (
     <div className="d-flex">
-      <Navigation />
+      <Navigation setEditing={setEditing} />
       <div className="col-sm-12 col-md-10">
         <Routes>
           <Route
