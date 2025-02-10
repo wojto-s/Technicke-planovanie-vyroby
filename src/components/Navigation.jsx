@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { MobileNav } from "./navigation/MobileNav";
 import { DesktopNav } from "./navigation/DesktopNav";
+import { TabletMenu } from "./navigation/TabletMenu";
 
 export function Navigation({ setEditing }) {
   const location = useLocation();
@@ -29,6 +30,7 @@ export function Navigation({ setEditing }) {
   return (
     <section className="navigacka">
       <DesktopNav active={active} setEditing={setEditing} />
+      <TabletMenu active={active} setEditing={setEditing} />
       <MobileNav active={active} setEditing={setEditing} />
     </section>
   );

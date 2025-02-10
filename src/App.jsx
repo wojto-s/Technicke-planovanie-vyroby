@@ -100,7 +100,7 @@ function App() {
   return (
     <div className="d-flex">
       <Navigation setEditing={setEditing} />
-      <div className="col-sm-12 col-md-10">
+      <div className="col-sm-12 col-md-11 col-lg-10">
         <Routes>
           <Route
             path="/"

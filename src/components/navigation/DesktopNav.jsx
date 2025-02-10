@@ -23,7 +23,7 @@ export function DesktopNav({ active, setEditing }) {
           }`}
         >
           <span>
-            <i class="fa-solid fa-calendar-days"></i>
+            <i className="fa-solid fa-calendar-days"></i>
           </span>
           Kalendár
         </Link>
@@ -34,7 +34,7 @@ export function DesktopNav({ active, setEditing }) {
           }`}
         >
           <span>
-            <i class="fa-solid fa-clock-rotate-left"></i>
+            <i className="fa-solid fa-clock-rotate-left"></i>
           </span>
           História
         </Link>
@@ -46,7 +46,7 @@ export function DesktopNav({ active, setEditing }) {
           }`}
         >
           <span>
-            <i class="fa-solid fa-wrench"></i>
+            <i className="fa-solid fa-wrench"></i>
           </span>
           Stroje
         </Link>
@@ -57,7 +57,7 @@ export function DesktopNav({ active, setEditing }) {
           }`}
         >
           <span>
-            <i class="fa-solid fa-box-open"></i>
+            <i class="fa-solid fa-box"></i>
           </span>
           Výrobky
         </Link>
@@ -69,7 +69,7 @@ export function DesktopNav({ active, setEditing }) {
           onClick={handleSetPridat}
         >
           <span>
-            <i class="fa-solid fa-plus"></i>
+            <i className="fa-solid fa-plus"></i>
           </span>
           Pridaj Výrobu
         </Link>
