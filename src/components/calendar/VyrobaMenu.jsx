@@ -1,5 +1,3 @@
-import { NavContent } from "../navigation/DesktopNav";
-
 export function VyrobaMenu({ date, setNewDate }) {
   const today = new Date();
   const todayDateString = today.toDateString();

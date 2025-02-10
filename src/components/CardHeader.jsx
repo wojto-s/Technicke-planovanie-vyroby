@@ -1,5 +1,3 @@
-import { NavContent } from "./navigation/DesktopNav";
-
 export function CardHeader({ cardName }) {
   return (
     <section className="card-header d-flex flex-column align-items-center justify-content-center">
