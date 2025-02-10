@@ -1,4 +1,4 @@
-import { NavContent } from "./navigation/NavContent";
+import { NavContent } from "./navigation/DesktopNav";
 
 export function CardHeader({ cardName }) {
   return (

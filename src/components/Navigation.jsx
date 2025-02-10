@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { MobileNav } from "./navigation/MobileNav";
-import { NavContent } from "./navigation/NavContent";
+import { DesktopNav } from "./navigation/DesktopNav";
 
 export function Navigation() {
   const location = useLocation();
@@ -28,7 +28,7 @@ export function Navigation() {
   };
   return (
     <section className="navigacka">
-      <NavContent active={active} />
+      <DesktopNav active={active} />
       <MobileNav active={active} />
     </section>
   );
