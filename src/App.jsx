@@ -7,7 +7,6 @@ import { Historia } from "./components/Historia";
 import { Vyrobky } from "./components/Vyrobky";
 import { NewVyroba } from "./components/NewVyroba";
 import * as XLSX from "xlsx";
-import { createRoot } from "react-dom/client";
 
 function App() {
   // PRACOVNA DOBA
@@ -96,6 +95,7 @@ function App() {
   //console.log(vyroba);
   const [isEditing, setEditing] = useState(false);
   const [currentEdit, setCurrentEdit] = useState({});
+
   //ROUTY
   return (
     <div className="d-flex">

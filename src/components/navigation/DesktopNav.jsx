@@ -57,7 +57,7 @@ export function DesktopNav({ active, setEditing }) {
           }`}
         >
           <span>
-            <i class="fa-solid fa-box"></i>
+            <i className="fa-solid fa-box"></i>
           </span>
           Výrobky
         </Link>

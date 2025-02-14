@@ -125,6 +125,7 @@ body {
   border-radius: 0 20px 20px 0;
   transition: 0.2s ease-in-out;
 }
+
 .navigacka-menu nav span {
   font-size: 20px;
   margin-right: 1em;
@@ -136,6 +137,85 @@ body {
   color: var(--text);
   width: 75%;
   transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 1800px) {
+  .navigacka-menu nav a {
+    width: 70%;
+    border-radius: 0 15px 15px 0;
+  }
+
+  .navigacka-menu nav a:hover,
+  .navigacka-menu nav .active {
+    width: 80%;
+  }
+
+  .navigacka-menu nav span {
+    font-size: 18px;
+    margin-right: 0.75em;
+    margin-left: 0.25em;
+  }
+}
+
+@media (max-width: 1500px) {
+  .navigacka-menu nav a {
+    width: 80%;
+    border-radius: 0 15px 15px 0;
+  }
+
+  .navigacka-menu nav a:hover,
+  .navigacka-menu nav .active {
+    width: 90%;
+  }
+
+  .navigacka-menu nav span {
+    font-size: 18px;
+    margin-right: 0.75em;
+    margin-left: 0.25em;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navigacka-menu nav a {
+    width: 85%;
+    border-radius: 0 15px 15px 0;
+  }
+
+  .navigacka-menu nav a:hover,
+  .navigacka-menu nav .active {
+    width: 90%;
+  }
+
+  .navigacka-menu nav span {
+    font-size: 16px;
+    margin-right: 0.5em;
+    margin-left: 0;
+  }
+
+  .navigacka-menu h5 {
+    display: none;
+  }
+}
+@media (max-width: 1060px) {
+  .navigacka-menu nav a {
+    width: 90%;
+    border-radius: 0 15px 15px 0;
+  }
+
+  .navigacka-menu nav a:hover,
+  .navigacka-menu nav .active {
+    width: 95%;
+  }
+
+  .navigacka-menu nav span {
+    font-size: 14px;
+    margin-right: 0.5em;
+    margin-left: 0;
+  }
+
+  .navigacka-menu h5 {
+    display: none;
+  }
 }
 
 /*--------------------------------------*/
@@ -192,6 +272,10 @@ body {
 }
 .tablet-menu nav div .nav-label {
   margin-left: 1em;
+}
+
+.nav-toggler-btn {
+  cursor: pointer;
 }
 
 /*--------------------------------------*/

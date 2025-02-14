@@ -14,7 +14,7 @@ export function TabletMenu({ active, setEditing }) {
   return (
     <article className="tablet-menu d-none d-sm-none d-md-block d-lg-none align-content-between justify-content-center">
       <div className="nav-toggler">
-        <span onClick={handleNavExpand}>
+        <span onClick={handleNavExpand} className="nav-toggler-btn">
           <i className="fa-solid fa-bars"></i>
         </span>
       </div>
@@ -50,7 +50,7 @@ export function TabletMenu({ active, setEditing }) {
         <Link to="/vyrobky" className="nav-link d-flex align-items-center">
           <div className={`d-flex ${active === "/vyrobky" ? "active" : ""}`}>
             <span>
-              <i class="fa-solid fa-box"></i>
+              <i className="fa-solid fa-box"></i>
             </span>
             <span className="nav-label">Výrobky</span>
           </div>

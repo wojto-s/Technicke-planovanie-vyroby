@@ -27,7 +27,7 @@ export function MobileNav({ active, setEditing }) {
           to="/vyrobky"
           className={`nav-link ${active === "/vyrobky" ? "active" : ""}`}
         >
-          <i class="fa-solid fa-box"></i>
+          <i className="fa-solid fa-box"></i>
         </Link>
         <Link
           to="/nova-vyroba"
