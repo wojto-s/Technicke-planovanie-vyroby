@@ -4,10 +4,43 @@ import { VyrobaCalendar } from "./calendar/VyrobaCalendar";
 
 export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
   let [newDate, setNewDate] = useState(new Date());
+  const [activeStroj, setActiveStroj] = useState("5os");
 
   return (
     <section className="vyroba">
       <VyrobaMenu date={newDate} setNewDate={setNewDate} />
+      <div className="d-md-flex d-lg-none justify-content-center">
+        <button
+          className={`me-3 ${
+            activeStroj === "5os"
+              ? "btn-custom btn-custom-active"
+              : "btn-custom-non-active"
+          }`}
+          onClick={() => setActiveStroj("5os")}
+        >
+          5os
+        </button>
+        <button
+          className={`me-3 ${
+            activeStroj === "3os"
+              ? "btn-custom btn-custom-active"
+              : "btn-custom-non-active"
+          }`}
+          onClick={() => setActiveStroj("3os")}
+        >
+          3os
+        </button>
+        <button
+          className={`${
+            activeStroj === "4os"
+              ? "btn-custom btn-custom-active"
+              : "btn-custom-non-active"
+          }`}
+          onClick={() => setActiveStroj("4os")}
+        >
+          4os
+        </button>
+      </div>
       <article className="vyroba-stroje">
         <div className="d-flex calendar">
           <section className="smeny pt-3 ps-3 pe-3">
@@ -20,7 +53,7 @@ export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
               ))}
             </ul>
           </section>
-          <div className="stroje d-flex flex-wrap">
+          <div className="stroje d-none d-lg-flex flex-wrap">
             <VyrobaCalendar
               strojId={"5os"}
               tableIndex={tableIndex}
@@ -39,6 +72,16 @@ export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
             />
             <VyrobaCalendar
               strojId={"4os"}
+              tableIndex={tableIndex}
+              newDate={newDate}
+              vyroba={vyroba}
+              setEditing={setEditing}
+              setCurrentEdit={setCurrentEdit}
+            />
+          </div>
+          <div className="stroje d-md-flex d-lg-none">
+            <VyrobaCalendar
+              strojId={activeStroj}
               tableIndex={tableIndex}
               newDate={newDate}
               vyroba={vyroba}

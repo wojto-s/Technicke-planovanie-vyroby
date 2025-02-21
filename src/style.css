@@ -29,6 +29,27 @@ body {
   font-weight: bold;
 }
 
+.btn-custom-active {
+  border: 2px solid var(--primary);
+}
+
+.btn-custom-non-active {
+  color: var(--primary);
+  background-color: var(--text);
+  outline: none;
+  border: 2px solid var(--primary);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-custom-non-active:hover {
+  color: var(--text);
+  background-color: var(--primary);
+  transition: 0.2s ease-in-out;
+}
+
 @media (max-width: 480px) {
   .btn-custom {
     margin: 1em !important;
@@ -384,14 +405,11 @@ body {
   }
 
   .stroje {
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
     height: 740px;
   }
 
   .stroje .stroj {
     border: none;
-    scroll-snap-align: start;
   }
   .stroje .stroj .tableColStatic li:last-child {
     border-radius: 0 0 20px 0;
