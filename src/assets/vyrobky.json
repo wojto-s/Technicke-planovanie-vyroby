@@ -1,0 +1,98 @@
+[
+  {
+    "firma": "Kvant",
+    "nazov": "Skenerový držiak KV30-cast X",
+    "cisloVykresu": "99-23-3426",
+    "bg": "greenBG"
+  },
+  {
+    "firma": "Slavia",
+    "nazov": "FRAESTEIL",
+    "cisloVykresu": "3B8B034_0209",
+    "bg": "purpleBG"
+  },
+  {
+    "firma": "Optima",
+    "nazov": "Plošina pre montáž PM50",
+    "cisloVykresu": "7A1B034_0117",
+    "bg": "yellowBG"
+  },
+  {
+    "firma": "MechaServis",
+    "nazov": "Senzorové telo ST100",
+    "cisloVykresu": "65-34-7519",
+    "bg": "blueBG"
+  },
+  {
+    "firma": "Technoplast",
+    "nazov": "Závesný modul ZM35",
+    "cisloVykresu": "9C2D048_0214",
+    "bg": "redBG"
+  },
+  {
+    "firma": "VibroTech",
+    "nazov": "Puzdro prevodovky PP20",
+    "cisloVykresu": "33-12-8476",
+    "bg": "orangeBG"
+  },
+  {
+    "firma": "InnovaTools",
+    "nazov": "Nástrojová hlava NH10",
+    "cisloVykresu": "8E5F056_0318",
+    "bg": "cyanBG"
+  },
+  {
+    "firma": "Slavia",
+    "nazov": "Rám stroja RS45",
+    "cisloVykresu": "47-23-6145",
+    "bg": "pinkBG"
+  },
+  {
+    "firma": "Slavia",
+    "nazov": "Spojovacia tyč ST15",
+    "cisloVykresu": "4G6H078_0415",
+    "bg": "brownBG"
+  },
+  {
+    "firma": "TechnoParts",
+    "nazov": "Mechanický úzaver MU70",
+    "cisloVykresu": "82-56-9457",
+    "bg": "lightBlueBG"
+  },
+  {
+    "firma": "RotorTech",
+    "nazov": "Kryt ovládacieho modulu KM90",
+    "cisloVykresu": "5J7K092_0519",
+    "bg": "darkGreenBG"
+  },
+  {
+    "firma": "Microtron",
+    "nazov": "Signalizačná jednotka SJ30",
+    "cisloVykresu": "21-78-3641",
+    "bg": "darkGrayBG"
+  },
+  {
+    "firma": "Technoplast",
+    "nazov": "Nástavec pre frézu NF25",
+    "cisloVykresu": "3L8M104_0613",
+    "bg": "lightGreenBG"
+  },
+  {
+    "firma": "Technoplast",
+    "nazov": "Nosná konzola NK80",
+    "cisloVykresu": "58-19-8352",
+    "bg": "blackBG"
+  },
+  {
+    "firma": "FlexiSystems",
+    "nazov": "Adaptér pre čerpadlo AC40",
+    "cisloVykresu": "6N9P116_0717",
+    "bg": "whiteBG"
+  },
+  {
+    "firma": "Mecano",
+    "nazov": "Ložiskové teleso LT50",
+    "cisloVykresu": "90-43-7268",
+    "bg": "beigeBG"
+  }
+]
