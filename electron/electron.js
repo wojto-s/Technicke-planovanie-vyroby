@@ -1,5 +1,4 @@
 const path = require("path");
-const fs = require("fs");
 const { app, BrowserWindow } = require("electron");
 
 const isDev = process.env.IS_DEV == "true" ? true : false;
@@ -48,15 +47,3 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
-/*
-ipcMain.on("save-json", (event, data) => {
-  const filePath = path.join(app.getPath("userData"), "vyroba.json"); // Zapisujeme do priečinka Electron aplikácie
-  fs.writeFile(filePath, JSON.stringify(data, null, 2), (err) => {
-    if (err) {
-      event.reply("save-error", "Chyba pri zápise JSON súboru");
-    } else {
-      event.reply("save-success", "Údaje boli úspešne zapísané!");
-    }
-  });
-});
-*/
