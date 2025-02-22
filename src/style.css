@@ -529,6 +529,18 @@ body {
     transform: translateY(30dvh);
   }
 }
+
+.popup-content .alert-icon {
+  font-size: 7em;
+  display: block;
+}
+
+.add-succes {
+  color: #008000;
+}
+.add-failed {
+  color: #e73028;
+}
 /*--------------------------------------*/
 /*HISTORIA + VYROBKY*/
 /*--------------------------------------*/

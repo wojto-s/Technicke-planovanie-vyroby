@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { NewVyrobaAlertPopUp } from "./NewVyrobaAlertPopUp";
+import { useState } from "react";
 
 export function NewVyrobaPrehlad({
   currentVyrobok,
@@ -94,13 +96,19 @@ export function NewVyrobaPrehlad({
       if (cisloVykresu === vyrobky[i].cisloVykresu) return vyrobky[i].bg;
     }
   };
-
+  //const [addSucces, setAddSucces] = useState(false)
   const navigate = useNavigate();
+  const [addSucces, setAddSucces] = useState(false);
+  const [isClicked, setClicked] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   //PRIDANIE DO DB
   function handleSubmit(e) {
     e.preventDefault();
+    setClicked(true);
     if (currentVyrobok.pocetKusov == 0)
-      return alert("Výroba nebola pridaná pretože si nezadal počet kusov"); // ak nezadáme počet kusov tak sa nič nevykoná
+      return setErrorMessage(
+        "Výroba nebola pridaná pretože si nezadal počet kusov"
+      ); // ak nezadáme počet kusov tak sa nič nevykoná a zobrazí sa chybová hláška
 
     let isConflict = false;
 
@@ -174,7 +182,8 @@ export function NewVyrobaPrehlad({
               : item
           )
         );
-        alert("Úprava prebehla úspešne");
+        setAddSucces(true);
+        return setErrorMessage("Úprava prebehla úspešne");
       } else {
         addVyroba(
           currentVyrobok.cisloVykresu,
@@ -187,14 +196,14 @@ export function NewVyrobaPrehlad({
           calcDuration(currentVyrobok.pocetKusov, currentVyrobok.cisloVykresu),
           getBG(currentVyrobok.cisloVykresu)
         );
-        alert("Výroba úspešne pridaná");
+        setAddSucces(true);
+        return setErrorMessage("Výroba úspešne pridaná");
       }
     } else {
-      alert("Výroba nebola pridaná / upravená kvôli časovému konfliktu");
+      return setErrorMessage(
+        "Výroba nebola pridaná / upravená kvôli časovému konfliktu"
+      );
     }
-    // Nakoniec nastavíme kusy a začiatočný čas na defaultné hodnoty
-
-    navigate("/");
   }
 
   return (
@@ -241,6 +250,13 @@ export function NewVyrobaPrehlad({
           {isEditing === true ? "Uprav výrobu" : "Pridaj výrobu"}
         </button>
       </form>
+      {isClicked === true && (
+        <NewVyrobaAlertPopUp
+          setClicked={setClicked}
+          errorMessage={errorMessage}
+          addSucces={addSucces}
+        />
+      )}
     </section>
   );
 }
