@@ -109,6 +109,7 @@ function App() {
                 tableIndex={tableIndex}
                 vyroba={vyroba}
                 setEditing={setEditing}
+                currentEdit={currentEdit}
                 setCurrentEdit={setCurrentEdit}
               />
             }

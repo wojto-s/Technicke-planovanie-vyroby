@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { VyrobaMenu } from "./calendar/VyrobaMenu";
 import { VyrobaCalendar } from "./calendar/VyrobaCalendar";
+import { VyrobaInfoPopUp } from "./calendar/VyrobaInfoPopUp";
 
-export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
+export function Vyroba({
+  tableIndex,
+  vyroba,
+  setEditing,
+  currentEdit,
+  setCurrentEdit,
+}) {
   let [newDate, setNewDate] = useState(new Date());
   const [activeStroj, setActiveStroj] = useState("5os");
+  const [isClicked, setClicked] = useState(false);
 
   return (
     <section className="vyroba">
@@ -61,6 +69,7 @@ export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
               vyroba={vyroba}
               setEditing={setEditing}
               setCurrentEdit={setCurrentEdit}
+              setClicked={setClicked}
             />
             <VyrobaCalendar
               strojId={"3os"}
@@ -69,6 +78,7 @@ export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
               vyroba={vyroba}
               setEditing={setEditing}
               setCurrentEdit={setCurrentEdit}
+              setClicked={setClicked}
             />
             <VyrobaCalendar
               strojId={"4os"}
@@ -77,6 +87,7 @@ export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
               vyroba={vyroba}
               setEditing={setEditing}
               setCurrentEdit={setCurrentEdit}
+              setClicked={setClicked}
             />
           </div>
           <div className="stroje d-md-flex d-lg-none">
@@ -87,10 +98,14 @@ export function Vyroba({ tableIndex, vyroba, setEditing, setCurrentEdit }) {
               vyroba={vyroba}
               setEditing={setEditing}
               setCurrentEdit={setCurrentEdit}
+              setClicked={setClicked}
             />
           </div>
         </div>
       </article>
+      {isClicked === true && (
+        <VyrobaInfoPopUp setClicked={setClicked} currentEdit={currentEdit} />
+      )}
     </section>
   );
 }

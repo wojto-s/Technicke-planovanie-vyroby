@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 export function VyrobaCalendar({
   strojId,
   tableIndex,
@@ -7,13 +5,12 @@ export function VyrobaCalendar({
   vyroba,
   setEditing,
   setCurrentEdit,
+  setClicked,
 }) {
-  const navigate = useNavigate();
-
-  const handleStartEdit = (vyrobok) => {
+  const handleShowInfo = (vyrobok) => {
+    setClicked(true);
     setEditing(true);
     setCurrentEdit(vyrobok);
-    navigate("/nova-vyroba");
   };
 
   function getVyrobaCaledar(strojID, newDate) {
@@ -49,7 +46,7 @@ export function VyrobaCalendar({
                 }}
                 className={` tableRow ${vyrobaItem.vyrobokBG}`}
                 key={vyrobaItem.id}
-                onClick={(e) => handleStartEdit(vyrobaItem)}
+                onClick={() => handleShowInfo(vyrobaItem)}
               >
                 <div className="d-flex">
                   <p className="me-5 mb-0">{vyrobaItem.nazovVyrobku}</p>
@@ -66,13 +63,13 @@ export function VyrobaCalendar({
                 }}
                 className={` tableRow ${vyrobaItem.vyrobokBG}`}
                 key={vyrobaItem.id}
-                onClick={(e) => handleStartEdit(vyrobaItem)}
+                onClick={() => handleShowInfo(vyrobaItem)}
               >
                 <div>
                   <p className="mb-0">{vyrobaItem.nazovVyrobku}</p>
                   <p className="mb-0">Poloha: {vyrobaItem.poloha}</p>
                   <p className="mb-0">Upnutie: {vyrobaItem.upnutie}</p>
-                  <p className="mb-0">Počet Ks: {vyrobaItem.pocetKusov}</p>
+                  <p className="mb-0">Počet Ks: {vyrobaItem.pocetKusov} ks</p>
                 </div>
               </li>
             );

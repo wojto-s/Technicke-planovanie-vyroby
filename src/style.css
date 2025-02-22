@@ -386,6 +386,7 @@ body {
   justify-content: center;
   position: absolute;
   width: 100%;
+  cursor: pointer;
 }
 
 .tableRowStatic {
@@ -496,40 +497,36 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-  display: none;
-}
-.popup-content {
-  border-radius: 20px;
-  background-color: white;
-  margin: 17% auto;
-  padding: 20px;
-  border: 1px solid #888888;
-  width: 30%;
-  font-weight: bolder;
-  position: relative;
-}
-.popup-content button {
-  display: block;
-  margin: 0 auto;
-}
-.show {
   display: block;
 }
 
+.popup-content {
+  border-radius: 20px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 20px;
+  width: 30%;
+  position: relative;
+}
+
+.popup-content p {
+  margin-bottom: 0;
+}
+
 .popupAnimationShow {
-  top: -1000px;
   animation: showPopup 0.5s ease forwards;
 }
 
 @keyframes showPopup {
   0% {
     opacity: 0;
+    transform: translateY(-50vh);
   }
   70% {
-    transform: translateY(105vh);
+    transform: translateY(35dvh);
   }
   100% {
-    transform: translateY(100vh);
+    transform: translateY(30dvh);
   }
 }
 /*--------------------------------------*/

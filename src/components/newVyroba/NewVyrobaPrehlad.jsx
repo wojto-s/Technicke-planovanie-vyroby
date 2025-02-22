@@ -190,7 +190,7 @@ export function NewVyrobaPrehlad({
         alert("Výroba úspešne pridaná");
       }
     } else {
-      alert("Výroba nebola pridaná kvôli časovému konfliktu");
+      alert("Výroba nebola pridaná / upravená kvôli časovému konfliktu");
     }
     // Nakoniec nastavíme kusy a začiatočný čas na defaultné hodnoty
 
@@ -238,7 +238,7 @@ export function NewVyrobaPrehlad({
       </div>
       <form>
         <button className="btn-custom" onClick={handleSubmit}>
-          Pridaj výrobu
+          {isEditing === true ? "Uprav výrobu" : "Pridaj výrobu"}
         </button>
       </form>
     </section>
