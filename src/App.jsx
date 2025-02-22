@@ -6,7 +6,9 @@ import { Vyroba } from "./components/Vyroba";
 import { Historia } from "./components/Historia";
 import { Vyrobky } from "./components/Vyrobky";
 import { NewVyroba } from "./components/NewVyroba";
-import * as XLSX from "xlsx";
+
+import vyrobkyData from "./assets/vyrobky.json";
+import vyrobkySpecsData from "./assets/vyrobkySpecs.json";
 
 function App() {
   // PRACOVNA DOBA
@@ -65,33 +67,9 @@ function App() {
   }*/
 
   //Všetky výrobky
-  const [vyrobky, setVyrobky] = useState([]);
-  useEffect(() => {
-    fetch("./vyrobky.xlsx")
-      .then((response) => response.arrayBuffer())
-      .then((buffer) => {
-        const workbook = XLSX.read(buffer, { type: "array" });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const jsonData = XLSX.utils.sheet_to_json(sheet);
-        setVyrobky(jsonData);
-      })
-      .catch((error) => console.error("Error loading Excel file:", error));
-  }, []);
+  const [vyrobky, setVyrobky] = useState([vyrobkyData]);
+  const [vyrobkySpecs, setVyrobkySpecs] = useState([vyrobkySpecsData]);
 
-  const [vyrobkySpecs, setVyrobkySpecs] = useState([]);
-  useEffect(() => {
-    fetch("./vyrobkySpecs.xlsx")
-      .then((response) => response.arrayBuffer())
-      .then((buffer) => {
-        const workbook = XLSX.read(buffer, { type: "array" });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const jsonData = XLSX.utils.sheet_to_json(sheet);
-        setVyrobkySpecs(jsonData);
-      })
-      .catch((error) => console.error("Error loading Excel file:", error));
-  }, []);
   //console.log(vyroba);
   const [isEditing, setEditing] = useState(false);
   const [currentEdit, setCurrentEdit] = useState({});
