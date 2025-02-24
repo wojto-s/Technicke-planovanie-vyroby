@@ -96,11 +96,12 @@ export function NewVyrobaPrehlad({
       if (cisloVykresu === vyrobky[i].cisloVykresu) return vyrobky[i].bg;
     }
   };
-  //const [addSucces, setAddSucces] = useState(false)
-  const navigate = useNavigate();
   const [addSucces, setAddSucces] = useState(false);
   const [isClicked, setClicked] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  //console.log(currentVyrobok);
+
   //PRIDANIE DO DB
   function handleSubmit(e) {
     e.preventDefault();
@@ -128,34 +129,35 @@ export function NewVyrobaPrehlad({
       currentVyrobok.startTime
     );
 
-    for (let i = 0; i < vyroba.length; i++) {
-      const endElem = vyroba[i].workPeriods.length - 1;
+    vyroba.forEach((vyrobok) => {
+      const endElem = vyrobok.workPeriods.length - 1;
       const checkStartTime = parseInt(
-        vyroba[i].workPeriods[0].startTime.split(":")[0],
+        vyrobok.workPeriods[0].startTime.split(":")[0],
         10
       );
       const checkEndTime = parseInt(
-        vyroba[i].workPeriods[endElem].endTime.split(":")[0],
+        vyrobok.workPeriods[endElem].endTime.split(":")[0],
         10
       );
-      if (
-        currentVyrobok.startDate.toISOString().split("T")[0] ===
-        vyroba[i].workPeriods[0].day
-      ) {
-        if (currentVyrobok.pracovisko === vyroba[i].stroj) {
-          if (
-            (currentVyrobok.startTime >= checkStartTime &&
-              currentVyrobok.startTime <= checkEndTime) || // nový čas začiatku je v existujúcom intervale
-            (currentVyrobok.startTime <= checkStartTime &&
-              workPeriods.length - 1 > checkStartTime) // nový interval prekrýva existujúci
-          ) {
-            console.log("chyba!");
-            isConflict = true;
-            break;
+
+      workPeriods.forEach((wp) => {
+        if (
+          vyrobok.workPeriods.some((vyrobokWP) => vyrobokWP.day === wp.day) ===
+          true
+        ) {
+          if (currentVyrobok.pracovisko === vyrobok.pracovisko) {
+            if (
+              (currentVyrobok.startTime >= checkStartTime &&
+                currentVyrobok.startTime <= checkEndTime) || // nový čas začiatku je v existujúcom intervale
+              (currentVyrobok.startTime <= checkStartTime &&
+                workPeriods.length - 1 > checkStartTime) // nový interval prekrýva existujúci
+            ) {
+              isConflict = true;
+            }
           }
         }
-      }
-    }
+      });
+    });
 
     // Zápis novej výroby do DB
     /*
