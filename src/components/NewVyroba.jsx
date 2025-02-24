@@ -114,7 +114,7 @@ export function NewVyroba({
   });
 
   const [cardName, setCardName] = useState("");
-  const [editID, setEditID] = useState(0);
+  const [editID, setEditID] = useState(null);
   useEffect(() => {
     if (isEditing) {
       setCardName("Edituješ výrobu");

@@ -100,8 +100,6 @@ export function NewVyrobaPrehlad({
   const [isClicked, setClicked] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  //console.log(currentVyrobok);
-
   //PRIDANIE DO DB
   function handleSubmit(e) {
     e.preventDefault();
@@ -142,11 +140,11 @@ export function NewVyrobaPrehlad({
       );
 
       workPeriods.forEach((wp) => {
-        // Zisťujeme či sa nám vo WP nachádza dátum ktorý potrebujeme, ak hej dostaneme true
-        if (
-          vyrobok.workPeriods.some((vyrobokWP) => vyrobokWP.day === wp.day) ===
-          true
-        ) {
+        // Zisťujeme či sa nám vo WP nachádza dátum ktorý potrebujeme, ak hej dostaneme true a či náhodou ho needitujeme
+        const isDayConflict = vyrobok.workPeriods.some(
+          (vyrobokWP) => vyrobokWP.day === wp.day
+        );
+        if (isDayConflict && vyrobok.id !== editID) {
           // Zisťujeme či je voľný stroj
           if (currentVyrobok.pracovisko === vyrobok.pracovisko) {
             // Zisťujeme či je voľný čas
@@ -154,9 +152,11 @@ export function NewVyrobaPrehlad({
               (currentVyrobok.startTime >= checkStartTime &&
                 currentVyrobok.startTime <= checkEndTime) || // nový čas začiatku je v existujúcom intervale
               (currentVyrobok.startTime <= checkStartTime &&
-                workPeriods.length - 1 > checkStartTime) // nový interval prekrýva existujúci
+                parseInt(workPeriods[endWork].endTime.split(":")[0], 10) >=
+                  checkStartTime) // nový interval prekrýva existujúci
             ) {
               isConflict = true;
+              console.log("chyba!");
             }
           }
         }
