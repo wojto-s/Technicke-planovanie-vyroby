@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { NewVyrobaAlertPopUp } from "./NewVyrobaAlertPopUp";
 import { useState } from "react";
 
@@ -96,6 +95,7 @@ export function NewVyrobaPrehlad({
       if (cisloVykresu === vyrobky[i].cisloVykresu) return vyrobky[i].bg;
     }
   };
+
   const [addSucces, setAddSucces] = useState(false);
   const [isClicked, setClicked] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -129,6 +129,7 @@ export function NewVyrobaPrehlad({
       currentVyrobok.startTime
     );
 
+    // Check či sú voľné dátum/stroj/časový interval
     vyroba.forEach((vyrobok) => {
       const endElem = vyrobok.workPeriods.length - 1;
       const checkStartTime = parseInt(
@@ -141,11 +142,14 @@ export function NewVyrobaPrehlad({
       );
 
       workPeriods.forEach((wp) => {
+        // Zisťujeme či sa nám vo WP nachádza dátum ktorý potrebujeme, ak hej dostaneme true
         if (
           vyrobok.workPeriods.some((vyrobokWP) => vyrobokWP.day === wp.day) ===
           true
         ) {
+          // Zisťujeme či je voľný stroj
           if (currentVyrobok.pracovisko === vyrobok.pracovisko) {
+            // Zisťujeme či je voľný čas
             if (
               (currentVyrobok.startTime >= checkStartTime &&
                 currentVyrobok.startTime <= checkEndTime) || // nový čas začiatku je v existujúcom intervale

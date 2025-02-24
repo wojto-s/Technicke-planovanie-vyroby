@@ -1,11 +1,38 @@
 [
   {
-    "id": "ce2cc95c-7be4-40f4-8ca9-6ebc77b9d0e0",
-    "cisloVykresu": "99-23-3426",
-    "nazovVyrobku": "Skenerový držiak KV30-cast X",
+    "id": "62968145-c9fa-43a5-858b-cc6ebfdf8799",
+    "cisloVykresu": "3B8B034_0209",
+    "nazovVyrobku": "FRAESTEIL",
     "poloha": "1",
     "pracovisko": "5os",
-    "pocetKusov": "20",
-    "vyrobokBG": "greenBG"
+    "upnutie": "zverak",
+    "pocetKusov": "25",
+    "workPeriods": [
+      {
+        "day": "2025-02-22",
+        "startTime": "14:00",
+        "endTime": "19:00"
+      }
+    ],
+    "duration": "0.00",
+    "vyrobokBG": "purpleBG"
+  },
+  {
+    "id": "d1ed2c46-71c6-49db-bff2-7382815cc25e",
+    "cisloVykresu": "4G6H078_0415",
+    "nazovVyrobku": "Spojovacia tyč ST15",
+    "poloha": "1",
+    "pracovisko": "4os",
+    "upnutie": "zverák",
+    "pocetKusov": "55",
+    "workPeriods": [
+      {
+        "day": "2025-02-22",
+        "startTime": "06:00",
+        "endTime": "17:00"
+      }
+    ],
+    "duration": "0.00",
+    "vyrobokBG": "brownBG"
   }
 ]

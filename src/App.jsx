@@ -9,6 +9,7 @@ import { NewVyroba } from "./components/NewVyroba";
 
 import vyrobkyData from "./assets/vyrobky.json";
 import vyrobkySpecsData from "./assets/vyrobkySpecs.json";
+import vyrobaData from "./assets/vyroba.json";
 
 function App() {
   // PRACOVNA DOBA
@@ -28,10 +29,11 @@ function App() {
 
     return JSON.parse(localValue);
   });
+  //const [vyroba, setVyroba] = useState(vyrobaData);
+
   useEffect(() => {
     if (vyroba.length > 0) {
       localStorage.setItem("ITEMS", JSON.stringify(vyroba));
-      //exportVyroba(vyroba);
     }
   }, [vyroba]);
 
@@ -60,19 +62,23 @@ function App() {
       vyrobokBG,
     };
     setVyroba((currentVyroba) => [...currentVyroba, newData]);
+    saveDataToServer(newData);
   }
-  /*
-  function exportVyroba(data) {
-    window.electron.saveJson(data);
-  }*/
 
   //Všetky výrobky
-  const [vyrobky, setVyrobky] = useState([vyrobkyData]);
-  const [vyrobkySpecs, setVyrobkySpecs] = useState([vyrobkySpecsData]);
+  const [vyrobky, setVyrobky] = useState(vyrobkyData);
+  const [vyrobkySpecs, setVyrobkySpecs] = useState(vyrobkySpecsData);
 
-  //console.log(vyroba);
   const [isEditing, setEditing] = useState(false);
   const [currentEdit, setCurrentEdit] = useState({});
+
+  const saveDataToServer = async (data) => {
+    await fetch("http://localhost:8000/saveVyroba", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+  };
 
   //ROUTY
   return (

@@ -454,7 +454,7 @@ body {
 }
 .brownBG {
   background-color: #a52a2a;
-  color: var(--alternate);
+  color: var(--text);
 }
 .lightBlueBG {
   background-color: #add8e6;
