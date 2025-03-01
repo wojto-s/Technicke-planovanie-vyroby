@@ -1,0 +1,143 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: 0.2s ease-in-out;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none !important;
+  /*overflow: hidden;*/
+
+  --primary: #e73028;
+  --text: #ffffff;
+  --secondary: #eeeeee;
+  --alternate: #0e131f;
+  --table: #d9d9d9;
+}
+
+body {
+  color: var(--alternate);
+}
+
+.btn-custom {
+  color: var(--text);
+  background-color: var(--primary);
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.btn-custom-active {
+  border: 2px solid var(--primary);
+}
+
+.btn-custom-non-active {
+  color: var(--primary);
+  background-color: var(--text);
+  outline: none;
+  border: 2px solid var(--primary);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-custom-non-active:hover {
+  color: var(--text);
+  background-color: var(--primary);
+  transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 480px) {
+  .btn-custom {
+    margin: 1em !important;
+  }
+}
+
+/*--------------------------------------*/
+/* PAGE HEADER*/
+/*--------------------------------------*/
+
+.vyroba-menu,
+.vyroba-menu .vyroba-info button,
+.vyroba-stroje,
+.card-header {
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-radius: 20px !important;
+  margin: 20px 40px;
+}
+.vyroba-menu .vyroba-info,
+.card-header {
+  height: 100px;
+}
+
+/*--------------------------------------*/
+/*POP UP SETTINGS*/
+/*--------------------------------------*/
+.popup {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: block;
+}
+
+.popup-content {
+  border-radius: 20px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 20px;
+  width: 30%;
+  position: relative;
+}
+
+.popup-content p {
+  margin-bottom: 0;
+}
+
+.popupAnimationShow {
+  animation: showPopup 0.5s ease forwards;
+}
+
+@keyframes showPopup {
+  0% {
+    opacity: 0;
+    transform: translateY(-50vh);
+  }
+  70% {
+    transform: translateY(35dvh);
+  }
+  100% {
+    transform: translateY(30dvh);
+  }
+}
+
+.popup-content .alert-icon {
+  font-size: 7em;
+  display: block;
+}
+
+.add-succes {
+  color: #008000;
+}
+.add-failed {
+  color: #e73028;
+}
+
+.scroll-box {
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+.search-bar {
+  border-radius: 12px;
+  padding: 10px 15px;
+  width: 45%;
+}

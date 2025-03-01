@@ -1,0 +1,24 @@
+.db-info {
+  background-color: var(--secondary);
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+.db-info:nth-child(odd) {
+  background-color: var(--table);
+}
+.db-info p {
+  margin-bottom: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+.db-info p span,
+.db-info h1 {
+  color: var(--alternate);
+}
+
+.db-info .vyrobaID {
+  font-size: 12px;
+  text-align: left;
+}

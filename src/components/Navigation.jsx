@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
+import "../assets/css/navigation.css";
+
 import { MobileNav } from "./navigation/MobileNav";
 import { DesktopNav } from "./navigation/DesktopNav";
 import { TabletMenu } from "./navigation/TabletMenu";

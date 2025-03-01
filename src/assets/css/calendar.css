@@ -1,0 +1,155 @@
+.stroje {
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.stroje h3,
+.smeny h3 {
+  margin-bottom: 10px;
+}
+
+.stroje .stroj {
+  padding: 1rem 0 0 0;
+  border-right: 3px solid var(--primary);
+}
+
+.stroje .stroj:last-child,
+.tableTimeRow:last-child {
+  border: none;
+}
+
+.stroje .stroj:last-child li:last-child {
+  border-radius: 0 0 20px 0;
+}
+
+.smeny {
+  width: 120px;
+  background-color: var(--primary);
+  color: var(--text);
+  font-weight: bold;
+  border-radius: 20px 0 0 20px;
+}
+
+.tableCol {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
+.tableColStatic {
+  list-style: none;
+  padding: 0;
+}
+
+.tableTimeRow {
+  height: 40px;
+  border-bottom: 2px solid var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableRow {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  cursor: pointer;
+}
+
+.tableRowStatic {
+  height: 40px;
+}
+.tableRowStatic:nth-child(odd) {
+  background-color: var(--table);
+}
+.tableRowStatic:last-child {
+  border: none;
+}
+
+@media (max-width: 991px) {
+  .vyroba,
+  .item-box {
+    margin-bottom: 5em;
+  }
+
+  .stroje {
+    height: 740px;
+  }
+
+  .stroje .stroj {
+    border: none;
+  }
+  .stroje .stroj .tableColStatic li:last-child {
+    border-radius: 0 0 20px 0;
+  }
+}
+
+/* VYROBA BG */
+.greenBG {
+  background-color: #008000;
+  color: var(--text);
+}
+.purpleBG {
+  background-color: #800080;
+  color: var(--text);
+}
+.yellowBG {
+  background-color: #ffff00;
+  color: var(--alternate);
+}
+.blueBG {
+  background-color: #0000ff;
+  color: var(--text);
+}
+.redBG {
+  background-color: #ff0000;
+  color: var(--text);
+}
+.orangeBG {
+  background-color: #ffa500;
+  color: var(--text);
+}
+.cyanBG {
+  background-color: #00ffff;
+  color: var(--alternate);
+}
+.pinkBG {
+  background-color: #ffc0cb;
+  color: var(--text);
+}
+.brownBG {
+  background-color: #a52a2a;
+  color: var(--text);
+}
+.lightBlueBG {
+  background-color: #add8e6;
+  color: var(--text);
+}
+.darkGreenBG {
+  background-color: #006400;
+  color: var(--alternate);
+}
+.darkGrayBG {
+  background-color: #a9a9a9;
+  color: var(--text);
+}
+.lightGreenBG {
+  background-color: #90ee90;
+  color: var(--alternate);
+}
+.blackBG {
+  background-color: #000000;
+  color: var(--text);
+}
+.whiteBG {
+  background-color: #ffffff;
+  color: var(--alternate);
+}
+.beigeBG {
+  background-color: #f5f5dc;
+  color: var(--text);
+}

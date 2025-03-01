@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./style.css";
+import axios from "axios";
+import "./assets/css/main.css";
 import { Route, Routes } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { Vyroba } from "./components/Vyroba";
@@ -23,13 +24,14 @@ function App() {
   }, []);
 
   //AKTUALNE VYROBY
+  /*
   const [vyroba, setVyroba] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
     if (localValue === null) return [];
 
     return JSON.parse(localValue);
-  });
-  //const [vyroba, setVyroba] = useState(vyrobaData);
+  });*/
+  const [vyroba, setVyroba] = useState(vyrobaData);
 
   useEffect(() => {
     if (vyroba.length > 0) {
@@ -79,6 +81,33 @@ function App() {
       body: JSON.stringify(data),
     });
   };
+  /*
+  const saveData = async (data) => {
+    await fetch("http://localhost:8000/api/data", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+  };
+*/
+  const getMongoData = async () => {
+    await axios
+      .get("http://localhost:8000/getVyrobky")
+      .then((res) => console.log(res.data))
+      .catch((e) => console.log(e));
+  };
+
+  const setMongoVyrobky = async (data) => {
+    await axios
+      .post("http://localhost:8000/setVyrobky", data)
+      .then((res) => console.log(res))
+      .catch((e) => console.log(e));
+  };
+
+  useEffect(() => {
+    getMongoData();
+    //setMongoVyrobky(vyrobky);
+  }, []);
 
   //ROUTY
   return (

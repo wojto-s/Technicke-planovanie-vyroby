@@ -5,6 +5,8 @@ import { NewVyrobaParams } from "./newVyroba/NewVyrobaParams";
 import { NewVyrobaPrehlad } from "./newVyroba/NewVyrobaPrehlad";
 import { CardHeader } from "./CardHeader";
 
+import "../assets/css/addvyroba.css";
+
 export function NewVyroba({
   addVyroba,
   tableIndex,

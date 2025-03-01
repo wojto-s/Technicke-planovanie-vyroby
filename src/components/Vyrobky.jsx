@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { VyrobkyItem } from "./vyrobky/VyrobkyItem";
 import { CardHeader } from "./CardHeader";
 
+import "../assets/css/dbvalues.css";
+
 export function Vyrobky({ vyrobky, vyrobkySpecs }) {
   const [searchVyrobok, setSearchVyrobok] = useState("");
   const [filteredVyrobky, setFilteredVyrobky] = useState([]);

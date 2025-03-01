@@ -1,6 +1,8 @@
 import { CardHeader } from "./CardHeader";
 import { useNavigate } from "react-router-dom";
 
+import "../assets/css/dbvalues.css";
+
 export function Historia({ vyroba, setVyroba, setEditing, setCurrentEdit }) {
   const handleDeleteVyroba = (id) => {
     setVyroba((prevVyroba) => prevVyroba.filter((vyr) => vyr.id !== id));

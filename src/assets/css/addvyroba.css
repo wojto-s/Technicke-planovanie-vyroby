@@ -1,0 +1,67 @@
+.vyrobok-card {
+  background-color: var(--secondary);
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid var(--secondary);
+  transition: 0.2s ease-in-out;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.vyrobok-card:hover {
+  /* background-color: var(--table);*/
+  border: 2px solid var(--primary);
+  transition: 0.2s ease-in-out;
+}
+
+.vyrobok-card:focus {
+  border: 2px solid var(--primary);
+  transition: 0.2s ease-in-out;
+}
+
+.new-vyroba-info {
+  background-color: var(--secondary);
+  margin: 0 20%;
+  padding: 20px 10px;
+  border-radius: 20px;
+}
+
+.new-vyroba-info input,
+.new-vyroba-info select {
+  border: 2px solid var(--primary);
+  background-color: var(--secondary);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.active-elem {
+  border: 2px solid var(--primary);
+}
+.disabled-elem {
+  pointer-events: none;
+  background-color: var(--table);
+  border-color: var(--table);
+}
+
+.new-vyroba-prehlad {
+  background-color: var(--secondary);
+  padding: 20px;
+  border-radius: 20px;
+  height: 80vh;
+}
+
+.new-vyroba-prehlad h3,
+.new-vyroba-prehlad form {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  input[type="number"] {
+    width: 60%;
+    text-align: center;
+  }
+
+  .new-vyroba-prehlad {
+    margin-bottom: 5em;
+  }
+}
