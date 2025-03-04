@@ -16,6 +16,7 @@ export function NewVyroba({
   vyrobkySpecs,
   isEditing,
   currentEdit,
+  updateVyrobaJSON,
 }) {
   const [currentCisloVykresu, setCurrentCisloVykresu] = useState(0);
   useEffect(() => {
@@ -201,6 +202,7 @@ export function NewVyroba({
             setVyroba={setVyroba}
             isEditing={isEditing}
             editID={editID}
+            updateVyrobaJSON={updateVyrobaJSON}
           />
         </div>
       </div>

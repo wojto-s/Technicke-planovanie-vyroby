@@ -10,6 +10,7 @@ export function NewVyrobaPrehlad({
   setVyroba,
   isEditing,
   editID,
+  updateVyrobaJSON,
 }) {
   const calcDuration = (pocetKusov, poloha) => {
     let dlzkaVyroby = 0; //min
@@ -261,6 +262,8 @@ export function NewVyrobaPrehlad({
           setClicked={setClicked}
           errorMessage={errorMessage}
           addSucces={addSucces}
+          vyroba={vyroba}
+          updateVyrobaJSON={updateVyrobaJSON}
         />
       )}
     </section>

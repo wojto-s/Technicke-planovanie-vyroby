@@ -8,32 +8,75 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+<<<<<<< HEAD
 app.post("/saveVyroba", (req, res) => {
+=======
+//const mongoUri = "mongodb://localhost:27017"; // URI pre lokálne bežiaci MongoDB
+const db =
+  "mongodb+srv://admin:admin@cluster0.br6yi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const dbName = "tpvDB";
+
+const client = new MongoClient(db);
+let database;
+
+async function connectToMongoDB() {
+  try {
+    /*
+    const client = await MongoClient.connect(mongoUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    database = client.db(dbName);
+    console.log("Pripojenie k MongoDB bolo úspešné");
+    */
+
+    await client.connect();
+    database = client.db("TPV");
+
+    const collections = await database.collections();
+    console.log("current tables:");
+    collections.forEach((collection) =>
+      console.log(collection.s.namespace.collection)
+    );
+
+    console.log("Pripojenie k MongoDB bolo úspešné");
+  } catch (error) {
+    console.error("Chyba pri pripojení k MongoDB:", error);
+  }
+}
+
+app.get("/getVyrobky", async (req, res) => {
+  try {
+    const collection = database.collection("vyrobky");
+    const data = await collection.find().toArray();
+    res.json(data);
+  } catch (error) {
+    console.error("Chyba pri získavaní dát z DB:", error);
+    res.status(500).json({ error: "Chyba pri získavaní dát" });
+  }
+});
+
+app.post("/setVyrobky", async (req, res) => {
+  try {
+    const collection = database.collection("vyrobky");
+    const newData = req.body;
+    const result = await collection.insertMany(newData);
+    res.status(201).json(result);
+  } catch (error) {
+    console.error("Chyba pri ukladaní dát:", error);
+    res.status(500).json({ error: "Chyba pri ukladaní dát" });
+  }
+});
+
+app.post("/updateVyroba", (req, res) => {
+>>>>>>> 5f2207e (patch 1.25 | fix pri updatovani JSONU teraz funguje pri pridavani a updatovani)
   const filePath = path.join(__dirname, "../src/assets/vyroba.json");
 
-  fs.readFile(filePath, "utf8", (err, data) => {
-    let jsonData = [];
-
-    if (!err && data) {
-      try {
-        jsonData = JSON.parse(data); // Parsovanie existujúcich dát
-        if (!Array.isArray(jsonData)) {
-          jsonData = []; // Ak nie je pole, inicializujeme ako prázdne
-        }
-      } catch (parseError) {
-        jsonData = []; // Ak je JSON poškodený, začneme od prázdneho poľa
-      }
+  fs.writeFile(filePath, JSON.stringify(req.body), (writeErr) => {
+    if (writeErr) {
+      return res.status(500).send({ message: "Chyba pri upravovaní dát." });
     }
-
-    jsonData.push(req.body); // Pridanie nových dát
-
-    // Zapísanie aktualizovaných dát späť do súboru
-    fs.writeFile(filePath, JSON.stringify(jsonData, null, 2), (writeErr) => {
-      if (writeErr) {
-        return res.status(500).send({ message: "Chyba pri ukladaní dát." });
-      }
-      res.send({ message: "Dáta uložené!" });
-    });
+    res.send({ message: "Dáta upravené!" });
   });
 });
 

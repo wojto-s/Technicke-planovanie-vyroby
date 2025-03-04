@@ -64,7 +64,6 @@ function App() {
       vyrobokBG,
     };
     setVyroba((currentVyroba) => [...currentVyroba, newData]);
-    saveDataToServer(newData);
   }
 
   //Všetky výrobky
@@ -74,8 +73,8 @@ function App() {
   const [isEditing, setEditing] = useState(false);
   const [currentEdit, setCurrentEdit] = useState({});
 
-  const saveDataToServer = async (data) => {
-    await fetch("http://localhost:8000/saveVyroba", {
+  const updateVyrobaJSON = async (data) => {
+    await fetch("http://localhost:8000/updateVyroba", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -90,6 +89,7 @@ function App() {
     });
   };
 */
+  /*
   const getMongoData = async () => {
     await axios
       .get("http://localhost:8000/getVyrobky")
@@ -97,17 +97,19 @@ function App() {
       .catch((e) => console.log(e));
   };
 
+  
   const setMongoVyrobky = async (data) => {
     await axios
       .post("http://localhost:8000/setVyrobky", data)
       .then((res) => console.log(res))
       .catch((e) => console.log(e));
   };
-
+ 
   useEffect(() => {
     getMongoData();
     //setMongoVyrobky(vyrobky);
   }, []);
+  */
 
   //ROUTY
   return (
@@ -166,6 +168,7 @@ function App() {
                 vyrobkySpecs={vyrobkySpecs}
                 isEditing={isEditing}
                 currentEdit={currentEdit}
+                updateVyrobaJSON={updateVyrobaJSON}
               />
             }
           />

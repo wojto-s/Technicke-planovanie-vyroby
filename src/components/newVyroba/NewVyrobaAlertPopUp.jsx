@@ -1,13 +1,22 @@
 import { useNavigate } from "react-router-dom";
 
-export function NewVyrobaAlertPopUp({ setClicked, errorMessage, addSucces }) {
+export function NewVyrobaAlertPopUp({
+  setClicked,
+  errorMessage,
+  addSucces,
+  vyroba,
+  updateVyrobaJSON,
+}) {
   const navigate = useNavigate();
   const handlePopupClose = () => {
     if (addSucces) {
       navigate("/");
+      updateVyrobaJSON(vyroba);
     }
     setClicked(false);
   };
+
+  console.log(vyroba);
 
   const showSuccesIcon = (isSucces) => {
     if (isSucces) {
