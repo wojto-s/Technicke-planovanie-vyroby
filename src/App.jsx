@@ -17,7 +17,7 @@ function App() {
   const [tableIndex, setTableIndex] = useState([]);
   useEffect(() => {
     const index = [];
-    for (let i = 6; i <= 22; i++) {
+    for (let i = 6; i <= 21; i++) {
       index.push(i);
     }
     setTableIndex(index);

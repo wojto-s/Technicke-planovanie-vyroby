@@ -151,7 +151,7 @@ export function NewVyrobaPrehlad({
             // Zisťujeme či je voľný čas
             if (
               (currentVyrobok.startTime >= checkStartTime &&
-                currentVyrobok.startTime <= checkEndTime) || // nový čas začiatku je v existujúcom intervale
+                currentVyrobok.startTime < checkEndTime) || // nový čas začiatku je v existujúcom intervale
               (currentVyrobok.startTime <= checkStartTime &&
                 parseInt(workPeriods[endWork].endTime.split(":")[0], 10) >=
                   checkStartTime) // nový interval prekrýva existujúci
