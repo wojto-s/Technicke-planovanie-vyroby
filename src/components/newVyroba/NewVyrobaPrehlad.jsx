@@ -1,4 +1,4 @@
-import { NewVyrobaAlertPopUp } from "./NewVyrobaAlertPopUp";
+import { NewVyrobaAlert } from "../popups/NewVyrobaAlert";
 import { useState } from "react";
 
 export function NewVyrobaPrehlad({
@@ -258,7 +258,7 @@ export function NewVyrobaPrehlad({
         </button>
       </form>
       {isClicked === true && (
-        <NewVyrobaAlertPopUp
+        <NewVyrobaAlert
           setClicked={setClicked}
           errorMessage={errorMessage}
           addSucces={addSucces}

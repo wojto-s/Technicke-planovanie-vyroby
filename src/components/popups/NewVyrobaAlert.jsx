@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export function NewVyrobaAlertPopUp({
+export function NewVyrobaAlert({
   setClicked,
   errorMessage,
   addSucces,
