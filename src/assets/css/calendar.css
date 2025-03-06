@@ -70,24 +70,6 @@
   border: none;
 }
 
-@media (max-width: 991px) {
-  .vyroba,
-  .item-box {
-    margin-bottom: 5em;
-  }
-
-  .stroje {
-    height: 740px;
-  }
-
-  .stroje .stroj {
-    border: none;
-  }
-  .stroje .stroj .tableColStatic li:last-child {
-    border-radius: 0 0 20px 0;
-  }
-}
-
 /* VYROBA BG */
 .greenBG {
   background-color: #008000;
@@ -152,4 +134,22 @@
 .beigeBG {
   background-color: #f5f5dc;
   color: var(--text);
+}
+
+@media (max-width: 991px) {
+  .vyroba,
+  .item-box {
+    margin-bottom: 5em;
+  }
+
+  .stroje {
+    height: 740px;
+  }
+
+  .stroje .stroj {
+    border: none;
+  }
+  .stroje .stroj .tableColStatic li:last-child {
+    border-radius: 0 0 20px 0;
+  }
 }

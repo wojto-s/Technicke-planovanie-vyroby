@@ -14,7 +14,8 @@
   width: 100%;
 }
 
-.navigacka-menu h1 {
+.navigacka-menu h1,
+.nav-logo {
   color: var(--primary);
   font-weight: 900;
   font-style: italic;
@@ -150,21 +151,26 @@
   width: 75px;
 }
 
-.tablet-menu .nav-collapsed .nav-label {
-  display: none;
+.tablet-menu .nav-collapsed .nav-label,
+.toggler-hide {
+  display: none !important;
 }
 .tablet-menu .nav-toggler {
   padding: 20px;
 }
 .tablet-menu .nav-link {
-  color: var(--text);
+  color: var(--primary);
   transition: 0.2s ease-in-out;
   padding-left: 0.5em;
 }
 
+.tablet-menu nav div .nav-label {
+  margin-left: 1em;
+  color: var(--alternate);
+}
+
 .tablet-menu nav div {
   font-size: 20px;
-  color: var(--primary);
   padding: 10px 20px;
   border-radius: 12px;
   transition: 0.2s ease-in-out;
@@ -174,17 +180,24 @@
 .tablet-menu nav div:hover {
   font-size: 20px;
   background-color: var(--primary);
-  color: var(--text);
+  color: var(--text); /* musi byt kvoli ikonke */
   padding: 10px 20px;
   border-radius: 12px;
   transition: 0.2s ease-in-out;
 }
-.tablet-menu nav div .nav-label {
-  margin-left: 1em;
+
+.tablet-menu nav .active .nav-label,
+.tablet-menu nav div .nav-label:hover {
+  color: var(--text);
 }
 
 .nav-toggler-btn {
+  font-size: 1.5em;
   cursor: pointer;
+}
+
+.nav-logo {
+  font-size: 1.5em;
 }
 
 /*--------------------------------------*/

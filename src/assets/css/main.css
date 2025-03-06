@@ -50,12 +50,6 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-@media (max-width: 480px) {
-  .btn-custom {
-    margin: 1em !important;
-  }
-}
-
 /*--------------------------------------*/
 /* PAGE HEADER*/
 /*--------------------------------------*/
@@ -140,4 +134,19 @@ body {
   border-radius: 12px;
   padding: 10px 15px;
   width: 45%;
+}
+
+@media (max-width: 991px) {
+  .vyroba,
+  .section-content {
+    position: relative;
+    left: 4.5em;
+  }
+}
+
+@media (max-width: 767px) {
+  .vyroba,
+  .section-content {
+    position: static;
+  }
 }

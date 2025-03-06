@@ -7,16 +7,38 @@ export function TabletMenu({ active, setEditing }) {
   };
 
   const navRef = useRef(null);
+  const togglerRef = useRef(null);
+  const togglerExpRef = useRef(null);
+
   const handleNavExpand = () => {
     if (navRef.current) navRef.current.classList.toggle("nav-collapsed");
+    if (togglerRef.current) togglerRef.current.classList.toggle("toggler-hide");
+    if (togglerExpRef.current)
+      togglerExpRef.current.classList.toggle("toggler-hide");
   };
 
   return (
     <article className="tablet-menu d-none d-sm-none d-md-block d-lg-none align-content-between justify-content-center">
       <div className="nav-toggler">
-        <span onClick={handleNavExpand} className="nav-toggler-btn">
+        <span
+          onClick={handleNavExpand}
+          ref={togglerRef}
+          className="nav-toggler-btn"
+        >
           <i className="fa-solid fa-bars"></i>
         </span>
+        <div
+          ref={togglerExpRef}
+          className="d-flex justify-content-between align-items-center toggler-hide"
+        >
+          <h1 className="nav-logo mb-0">TPV</h1>
+          <span
+            onClick={handleNavExpand}
+            className="nav-toggler-btn nav-toggler-close"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </span>
+        </div>
       </div>
       <nav ref={navRef} className="nav flex-column nav-collapsed mt-4">
         <Link to="/" className="nav-link d-flex align-items-center">
