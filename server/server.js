@@ -2,15 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
+const { MongoClient } = require("mongodb");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-<<<<<<< HEAD
-app.post("/saveVyroba", (req, res) => {
-=======
 //const mongoUri = "mongodb://localhost:27017"; // URI pre lokálne bežiaci MongoDB
 const db =
   "mongodb+srv://admin:admin@cluster0.br6yi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -45,6 +43,8 @@ async function connectToMongoDB() {
   }
 }
 
+//connectToMongoDB();
+
 app.get("/getVyrobky", async (req, res) => {
   try {
     const collection = database.collection("vyrobky");
@@ -69,7 +69,6 @@ app.post("/setVyrobky", async (req, res) => {
 });
 
 app.post("/updateVyroba", (req, res) => {
->>>>>>> 5f2207e (patch 1.25 | fix pri updatovani JSONU teraz funguje pri pridavani a updatovani)
   const filePath = path.join(__dirname, "../src/assets/vyroba.json");
 
   fs.writeFile(filePath, JSON.stringify(req.body), (writeErr) => {
