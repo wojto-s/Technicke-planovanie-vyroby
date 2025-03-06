@@ -50,6 +50,17 @@ body {
   transition: 0.2s ease-in-out;
 }
 
+.btn-edit {
+  color: var(--text);
+  background-color: var(--primary);
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+.btn-change-days {
+  font-size: 1.25em;
+}
+
 /*--------------------------------------*/
 /* PAGE HEADER*/
 /*--------------------------------------*/
