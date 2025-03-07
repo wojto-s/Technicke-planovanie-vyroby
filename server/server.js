@@ -77,6 +77,7 @@ app.post("/updateVyroba", (req, res) => {
       return res.status(500).send({ message: "Chyba pri upravovaní dát." });
     }
     res.send({ message: "Dáta upravené!" });
+    console.log("upravene");
   });
 });
 

@@ -67,10 +67,7 @@ export function VyrobaInfoAlert({ setClicked, currentEdit, setVyroba }) {
               </span>
             </p>
             <div className="d-flex justify-content-center mt-4">
-              <button
-                className="btn-custom me-4"
-                onClick={() => handleEditClick}
-              >
+              <button className="btn-custom me-4" onClick={handleEditClick}>
                 Upraviť
               </button>
               <button
@@ -79,7 +76,7 @@ export function VyrobaInfoAlert({ setClicked, currentEdit, setVyroba }) {
               >
                 Zmazať
               </button>
-              <button className="btn-custom" onClick={() => handlePopupClose}>
+              <button className="btn-custom" onClick={handlePopupClose}>
                 Zavrieť
               </button>
             </div>
@@ -89,10 +86,10 @@ export function VyrobaInfoAlert({ setClicked, currentEdit, setVyroba }) {
           <>
             <h4 className="mt-5">Prajete si zmazať výrobu?</h4>
             <h6 className="mb-5">ID výroby: {stagedForDeletion}</h6>
-            <button className="btn-custom me-3" onClick={() => handleDelete()}>
+            <button className="btn-custom me-3" onClick={handleDelete}>
               Zmazať
             </button>
-            <button className="btn-custom" onClick={() => handlePopupClose()}>
+            <button className="btn-custom" onClick={handlePopupClose}>
               Zavrieť
             </button>
           </>

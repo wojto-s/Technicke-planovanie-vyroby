@@ -36,7 +36,7 @@ export function TabletMenu({ active, setEditing }) {
             onClick={handleNavExpand}
             className="nav-toggler-btn nav-toggler-close"
           >
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </span>
         </div>
       </div>

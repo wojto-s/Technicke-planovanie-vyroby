@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
 import "./assets/css/main.css";
 import { Route, Routes } from "react-router-dom";
@@ -24,21 +24,8 @@ function App() {
   }, []);
 
   //AKTUALNE VYROBY
-  /*
-  const [vyroba, setVyroba] = useState(() => {
-    const localValue = localStorage.getItem("ITEMS");
-    if (localValue === null) return [];
-
-    return JSON.parse(localValue);
-  });*/
   const [vyroba, setVyroba] = useState(vyrobaData);
-
-  useEffect(() => {
-    if (vyroba.length > 0) {
-      localStorage.setItem("ITEMS", JSON.stringify(vyroba));
-    }
-  }, [vyroba]);
-
+  const prevVyrobaRef = useRef(vyroba);
   //PRIDANIE VYROBY
   function addVyroba(
     cisloVykresu,
@@ -73,13 +60,24 @@ function App() {
   const [isEditing, setEditing] = useState(false);
   const [currentEdit, setCurrentEdit] = useState({});
 
-  const updateVyrobaJSON = async (data) => {
+  const updateVyrobaJSON = useCallback(async (data) => {
     await fetch("http://localhost:8000/updateVyroba", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-  };
+  }, []);
+
+  useEffect(() => {
+    if (
+      vyroba &&
+      JSON.stringify(prevVyrobaRef.current) !== JSON.stringify(vyroba)
+    ) {
+      updateVyrobaJSON(vyroba);
+      prevVyrobaRef.current = vyroba;
+    }
+  }, [vyroba]);
+
   /*
   const saveData = async (data) => {
     await fetch("http://localhost:8000/api/data", {
@@ -170,7 +168,6 @@ function App() {
                 vyrobkySpecs={vyrobkySpecs}
                 isEditing={isEditing}
                 currentEdit={currentEdit}
-                updateVyrobaJSON={updateVyrobaJSON}
               />
             }
           />

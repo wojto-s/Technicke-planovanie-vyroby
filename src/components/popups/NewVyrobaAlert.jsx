@@ -5,13 +5,11 @@ export function NewVyrobaAlert({
   errorMessage,
   addSucces,
   vyroba,
-  updateVyrobaJSON,
 }) {
   const navigate = useNavigate();
   const handlePopupClose = () => {
     if (addSucces) {
       navigate("/");
-      updateVyrobaJSON(vyroba);
     }
     setClicked(false);
   };
