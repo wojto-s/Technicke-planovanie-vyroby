@@ -33,7 +33,7 @@ export function VyrobaMenu({ date, setNewDate }) {
             <i className="fa-solid fa-caret-left"></i>
           </span>
         </button>
-        <div className="fw-bold fs-5">{date.toLocaleDateString()}</div>
+        <p className="fw-bold fs-5 mb-0">{date.toLocaleDateString()}</p>
         <button className="btn-custom" onClick={handleAddDay}>
           <span className="btn-change-days">
             <i className="fa-solid fa-caret-right"></i>

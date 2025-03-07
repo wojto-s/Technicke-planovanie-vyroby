@@ -9,6 +9,7 @@ import { VyrobaInfoAlert } from "./popups/VyrobaInfoAlert";
 export function Vyroba({
   tableIndex,
   vyroba,
+  setVyroba,
   setEditing,
   currentEdit,
   setCurrentEdit,
@@ -107,7 +108,11 @@ export function Vyroba({
         </div>
       </article>
       {isClicked === true && (
-        <VyrobaInfoAlert setClicked={setClicked} currentEdit={currentEdit} />
+        <VyrobaInfoAlert
+          setClicked={setClicked}
+          currentEdit={currentEdit}
+          setVyroba={setVyroba}
+        />
       )}
     </section>
   );

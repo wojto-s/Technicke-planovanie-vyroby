@@ -123,6 +123,7 @@ function App() {
               <Vyroba
                 tableIndex={tableIndex}
                 vyroba={vyroba}
+                setVyroba={setVyroba}
                 setEditing={setEditing}
                 currentEdit={currentEdit}
                 setCurrentEdit={setCurrentEdit}
@@ -135,6 +136,7 @@ function App() {
               <Vyroba
                 tableIndex={tableIndex}
                 vyroba={vyroba}
+                setVyroba={setVyroba}
                 vyrobky={vyrobky}
                 setEditing={setEditing}
                 setCurrentEdit={setCurrentEdit}

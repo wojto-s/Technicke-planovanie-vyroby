@@ -19,7 +19,7 @@
   border: none;
 }
 
-.stroje .stroj:last-child li:last-child {
+.stroje .stroj:last-child .tableColStatic li:last-child {
   border-radius: 0 0 20px 0;
 }
 
@@ -142,14 +142,14 @@
     margin-bottom: 5em;
   }
 
-  .stroje {
-    height: 740px;
-  }
-
   .stroje .stroj {
     border: none;
   }
   .stroje .stroj .tableColStatic li:last-child {
     border-radius: 0 0 20px 0;
+  }
+
+  .vyroba-menu p {
+    font-size: 1em !important;
   }
 }
