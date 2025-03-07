@@ -43,8 +43,8 @@ async function connectToMongoDB() {
   }
 }
 
-//connectToMongoDB();
-
+connectToMongoDB();
+/*
 app.get("/getVyrobky", async (req, res) => {
   try {
     const collection = database.collection("vyrobky");
@@ -55,13 +55,14 @@ app.get("/getVyrobky", async (req, res) => {
     res.status(500).json({ error: "Chyba pri získavaní dát" });
   }
 });
-
+*/
 app.post("/setVyrobky", async (req, res) => {
   try {
-    const collection = database.collection("vyrobky");
+    const collection = database.collection("vyrobkySpecs");
     const newData = req.body;
     const result = await collection.insertMany(newData);
     res.status(201).json(result);
+    console.log("insert success");
   } catch (error) {
     console.error("Chyba pri ukladaní dát:", error);
     res.status(500).json({ error: "Chyba pri ukladaní dát" });
