@@ -4,7 +4,7 @@ import "../assets/css/calendar.css";
 
 import { VyrobaMenu } from "./calendar/VyrobaMenu";
 import { VyrobaCalendar } from "./calendar/VyrobaCalendar";
-import { VyrobaInfoPopUp } from "./calendar/VyrobaInfoPopUp";
+import { VyrobaInfoAlert } from "./popups/VyrobaInfoAlert";
 
 export function Vyroba({
   tableIndex,
@@ -107,7 +107,7 @@ export function Vyroba({
         </div>
       </article>
       {isClicked === true && (
-        <VyrobaInfoPopUp setClicked={setClicked} currentEdit={currentEdit} />
+        <VyrobaInfoAlert setClicked={setClicked} currentEdit={currentEdit} />
       )}
     </section>
   );

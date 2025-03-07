@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export function VyrobaInfoPopUp({ setClicked, currentEdit }) {
+export function VyrobaInfoAlert({ setClicked, currentEdit }) {
   const handlePopupClose = () => {
     setClicked(false);
   };
