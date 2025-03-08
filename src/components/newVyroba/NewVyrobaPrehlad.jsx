@@ -10,7 +10,6 @@ export function NewVyrobaPrehlad({
   setVyroba,
   isEditing,
   editID,
-  updateVyrobaJSON,
 }) {
   const calcDuration = (pocetKusov, poloha) => {
     let dlzkaVyroby = 0; //min
@@ -19,8 +18,20 @@ export function NewVyrobaPrehlad({
     vyrobkySpecs.forEach((vSpec) => {
       if (poloha == vSpec.poloha) dlzkaVyroby = vSpec.cas;
     });
-    const hodiny = (pocetKusov * dlzkaVyroby) / 60;
-    return hodiny.toFixed(2);
+    let hodiny = (pocetKusov * dlzkaVyroby) / 60;
+    if (hodiny < 0.5 && hodiny > 0) hodiny = 0.5;
+
+    function slipFloor(num) {
+      let f = Math.floor(num);
+      if (num - f < 0.5) {
+        return f;
+      }
+      return f + 0.5;
+    }
+
+    const rounded = slipFloor(hodiny);
+
+    return rounded;
   };
   const findNazov = (cisloVykresu) => {
     let nazov;
@@ -42,8 +53,7 @@ export function NewVyrobaPrehlad({
         startTime
       );
       const lastElem = workPeriods[workPeriods.length - 1];
-      const endVyroba =
-        lastElem.day + " " + lastElem.endTime.slice(0, 2) + ":00";
+      const endVyroba = lastElem.day + " " + lastElem.endTime;
       return endVyroba;
     } else {
       return " Musíš zadať počet kusov";
@@ -58,10 +68,13 @@ export function NewVyrobaPrehlad({
 
     while (remainingHours > 0) {
       let workStart = new Date(currentDateTime);
+
       // Ak sa nám výroba presunie do ďalšieho dňa, tak nastavujeme aby následujúci deň začínala od 6:00
       if (periodCounter == 0) {
-        const startTimeParsed = parseInt(startTime);
-        workStart.setHours(startTimeParsed, 0, 0, 0);
+        const startTimeParsed = parseFloat(startTime);
+        const hrs = Math.floor(startTimeParsed);
+        const min = (startTimeParsed % 1) * 60;
+        workStart.setHours(hrs, min, 0, 0);
       } else {
         workStart.setHours(6, 0, 0, 0);
       }
@@ -73,16 +86,21 @@ export function NewVyrobaPrehlad({
       const workHours = Math.min(remainingHours, availableHours);
 
       const endTime = new Date(workStart);
-      endTime.setHours(workStart.getHours() + workHours);
+      endTime.setMinutes(workStart.getMinutes() + workHours * 60);
+
+      const formatTime = (date) => {
+        let hours = date.getHours().toString().padStart(2, "0");
+        let minutes = date.getMinutes() === 30 ? "30" : "00";
+        return `${hours}:${minutes}`;
+      };
 
       workPeriods.push({
         day: workStart.toISOString().substring(0, 10),
-        startTime: workStart.toTimeString().substring(0, 5),
-        endTime: endTime.toTimeString().substring(0, 5),
+        startTime: formatTime(workStart),
+        endTime: formatTime(endTime),
       });
 
       remainingHours -= workHours;
-
       currentDateTime = new Date(workEnd);
       currentDateTime.setDate(currentDateTime.getDate() + 1);
       periodCounter++;
@@ -157,7 +175,6 @@ export function NewVyrobaPrehlad({
                   checkStartTime) // nový interval prekrýva existujúci
             ) {
               isConflict = true;
-              console.log("chyba!");
             }
           }
         }
@@ -249,7 +266,15 @@ export function NewVyrobaPrehlad({
         </h6>
         <h5>
           Výroba bude trvať:{" "}
-          {calcDuration(currentVyrobok.pocetKusov, currentVyrobok.poloha)} hod
+          {parseInt(
+            calcDuration(currentVyrobok.pocetKusov, currentVyrobok.poloha)
+          )}
+          {calcDuration(currentVyrobok.pocetKusov, currentVyrobok.poloha) ===
+          Math.floor(
+            calcDuration(currentVyrobok.pocetKusov, currentVyrobok.poloha)
+          )
+            ? ":00"
+            : ":30"}
         </h5>
       </div>
       <form>
@@ -263,7 +288,6 @@ export function NewVyrobaPrehlad({
           errorMessage={errorMessage}
           addSucces={addSucces}
           vyroba={vyroba}
-          updateVyrobaJSON={updateVyrobaJSON}
         />
       )}
     </section>

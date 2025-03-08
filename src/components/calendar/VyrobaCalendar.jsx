@@ -41,10 +41,10 @@ export function VyrobaCalendar({
             return (
               <li
                 style={{
-                  height: `${rozdielCasov * 40}px`,
-                  top: `${(startTime - 6) * 40}px`,
+                  height: `${rozdielCasov * 21.75}px`,
+                  top: `${(startTime - 6) * 21.75}px`,
                 }}
-                className={` tableRow ${vyrobaItem.vyrobokBG}`}
+                className={`tableRow ${vyrobaItem.vyrobokBG}`}
                 key={vyrobaItem.id}
                 onClick={() => handleShowInfo(vyrobaItem)}
               >
@@ -58,10 +58,10 @@ export function VyrobaCalendar({
             return (
               <li
                 style={{
-                  height: `${rozdielCasov * 40}px`,
-                  top: `${(startTime - 6) * 40}px`,
+                  height: `${rozdielCasov * 21.75 * 2}px`,
+                  top: `${(startTime - 6) * 21.75 * 2}px`,
                 }}
-                className={` tableRow ${vyrobaItem.vyrobokBG}`}
+                className={`tableRow ${vyrobaItem.vyrobokBG}`}
                 key={vyrobaItem.id}
                 onClick={() => handleShowInfo(vyrobaItem)}
               >

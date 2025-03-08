@@ -58,11 +58,27 @@ export function Vyroba({
           <section className="smeny pt-3 ps-3 pe-3">
             <h3>ČAS</h3>
             <ul className="tableCol mt-3 mb-0">
-              {tableIndex.map((index) => (
-                <li key={index} id={index} className="tableTimeRow">
-                  {index}:00
-                </li>
-              ))}
+              {tableIndex.map((index) => {
+                const temp = Number(index);
+                if (temp === Math.floor(temp)) {
+                  return (
+                    <li key={index} id={index} className="tableTimeRow">
+                      {index}:00
+                    </li>
+                  );
+                } else {
+                  const splited = parseInt(index);
+                  return (
+                    <li
+                      key={index}
+                      id={index}
+                      className="tableTimeRow half-hour"
+                    >
+                      {splited}:30
+                    </li>
+                  );
+                }
+              })}
             </ul>
           </section>
           <div className="stroje d-none d-lg-flex flex-wrap">

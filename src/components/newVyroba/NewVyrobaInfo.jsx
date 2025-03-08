@@ -27,17 +27,30 @@ export function NewVyrobaInfo({
           onChange={(e) => setCurrentStartTime(e.target.value)}
           value={currentStartTime}
         >
-          {tableIndex.map((index) => (
-            <option key={index} value={index}>
-              {index}:00
-            </option>
-          ))}
+          {tableIndex.map((index) => {
+            const temp = Number(index);
+            if (temp === Math.floor(temp)) {
+              return (
+                <option key={index} value={index}>
+                  {index}:00
+                </option>
+              );
+            } else {
+              const splited = parseInt(index);
+              return (
+                <option key={index} value={index}>
+                  {splited}:30
+                </option>
+              );
+            }
+          })}
         </select>
       </article>
       <article className="mt-3">
         <h5>Počet kusov: </h5>
         <input
           type="number"
+          min="0"
           onChange={(e) => setCurrentPocetKusov(e.target.value)}
           value={currentPocetKusov}
         />

@@ -43,15 +43,18 @@
 }
 
 .tableTimeRow {
-  height: 40px;
-  border-bottom: 2px solid var(--text);
+  height: 21.75px;
+  /*border-bottom: 2px solid var(--text);*/
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.tableCol .half-hour {
+  font-size: 0.75em;
+}
+
 .tableRow {
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +64,7 @@
 }
 
 .tableRowStatic {
-  height: 40px;
+  height: 21.75px;
 }
 .tableRowStatic:nth-child(odd) {
   background-color: var(--table);
@@ -72,67 +75,67 @@
 
 /* VYROBA BG */
 .greenBG {
-  background-color: #008000;
+  background-color: rgba(0, 128, 0, 0.8);
   color: var(--text);
 }
 .purpleBG {
-  background-color: #800080;
+  background-color: rgba(128, 0, 128, 0.8);
   color: var(--text);
 }
 .yellowBG {
-  background-color: #ffff00;
+  background-color: rgba(255, 255, 0, 0.8);
   color: var(--alternate);
 }
 .blueBG {
-  background-color: #0000ff;
+  background-color: rgba(0, 0, 255, 0.8);
   color: var(--text);
 }
 .redBG {
-  background-color: #ff0000;
+  background-color: rgba(255, 0, 0, 0.8);
   color: var(--text);
 }
 .orangeBG {
-  background-color: #ffa500;
+  background-color: rgba(255, 165, 0, 0.8);
   color: var(--text);
 }
 .cyanBG {
-  background-color: #00ffff;
+  background-color: rgba(0, 255, 255, 0.8);
   color: var(--alternate);
 }
 .pinkBG {
-  background-color: #ffc0cb;
+  background-color: rgba(255, 192, 203, 0.8);
   color: var(--text);
 }
 .brownBG {
-  background-color: #a52a2a;
+  background-color: rgba(165, 42, 42, 0.8);
   color: var(--text);
 }
 .lightBlueBG {
-  background-color: #add8e6;
+  background-color: rgba(173, 216, 230, 0.8);
   color: var(--text);
 }
 .darkGreenBG {
-  background-color: #006400;
+  background-color: rgba(0, 100, 0, 0.8);
   color: var(--alternate);
 }
 .darkGrayBG {
-  background-color: #a9a9a9;
+  background-color: rgba(169, 169, 169, 0.8);
   color: var(--text);
 }
 .lightGreenBG {
-  background-color: #90ee90;
+  background-color: rgba(144, 238, 144, 0.8);
   color: var(--alternate);
 }
 .blackBG {
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.8);
   color: var(--text);
 }
 .whiteBG {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
   color: var(--alternate);
 }
 .beigeBG {
-  background-color: #f5f5dc;
+  background-color: rgba(245, 245, 220, 0.8);
   color: var(--text);
 }
 

@@ -14,8 +14,6 @@ export function NewVyrobaAlert({
     setClicked(false);
   };
 
-  console.log(vyroba);
-
   const showSuccesIcon = (isSucces) => {
     if (isSucces) {
       return (
