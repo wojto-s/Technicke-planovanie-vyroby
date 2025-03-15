@@ -43,8 +43,8 @@
 }
 
 .tableTimeRow {
-  height: 21.75px;
-  /*border-bottom: 2px solid var(--text);*/
+  height: 40px;
+  border-bottom: 2px solid var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,10 +64,11 @@
 }
 
 .tableRowStatic {
-  height: 21.75px;
+  height: 40px;
 }
 .tableRowStatic:nth-child(odd) {
   background-color: var(--table);
+  /*border-bottom: 2px solid var(--table);*/
 }
 .tableRowStatic:last-child {
   border: none;

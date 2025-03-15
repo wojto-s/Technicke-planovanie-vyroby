@@ -1,6 +1,6 @@
 export function VyrobaCalendar({
   strojId,
-  tableIndex,
+  fullHrs,
   newDate,
   vyroba,
   setEditing,
@@ -31,18 +31,24 @@ export function VyrobaCalendar({
       const result = vyrobaData.map((vyrobaItem) => {
         // Zisťujeme o aký časový úsek sa zrovna jedná
         const relevantPeriod = vyrobaItem.workPeriods.find(findRelevantPeriod);
-        const startTime = parseInt(relevantPeriod.startTime.split(":")[0]);
-        const endTime = parseInt(relevantPeriod.endTime.split(":")[0]);
+        const startTime = Number(
+          (relevantPeriod.startTime.split(":")[0] +=
+            relevantPeriod.startTime.split(":")[1] === "30" ? ".5" : "")
+        );
+        const endTime = Number(
+          (relevantPeriod.endTime.split(":")[0] +=
+            relevantPeriod.endTime.split(":")[1] === "30" ? ".5" : "")
+        );
         // Ak sa záznam nachádza v správnom časovom úseku, tak si vypočítame rozdiel časov aby sme vedeli určíť výšku a pozíciu
         if (relevantPeriod) {
           let rozdielCasov = endTime - startTime;
-          if (rozdielCasov === 16) rozdielCasov++;
+          if (rozdielCasov === 16);
           if (rozdielCasov < 4) {
             return (
               <li
                 style={{
-                  height: `${rozdielCasov * 21.75}px`,
-                  top: `${(startTime - 6) * 21.75}px`,
+                  height: `${rozdielCasov * 40}px`,
+                  top: `${(startTime - 6) * 40}px`,
                 }}
                 className={`tableRow ${vyrobaItem.vyrobokBG}`}
                 key={vyrobaItem.id}
@@ -58,8 +64,8 @@ export function VyrobaCalendar({
             return (
               <li
                 style={{
-                  height: `${rozdielCasov * 21.75 * 2}px`,
-                  top: `${(startTime - 6) * 21.75 * 2}px`,
+                  height: `${rozdielCasov * 40}px`,
+                  top: `${(startTime - 6) * 40}px`,
                 }}
                 className={`tableRow ${vyrobaItem.vyrobokBG}`}
                 key={vyrobaItem.id}
@@ -93,12 +99,14 @@ export function VyrobaCalendar({
 
   return (
     <div className="col-12 col-lg-4 stroj">
-      <h3>stroj {strojId}</h3>
+      <h3>
+        {strojId !== "TBD" && "stroj"} {strojId}
+      </h3>
       <ul className="tableCol mt-3 mb-0">
         {getVyrobaCaledar(strojId, newDate)}
       </ul>
       <ul className="tableColStatic mt-3 mb-0">
-        {tableIndex.map((index) => (
+        {fullHrs.map((index) => (
           <li key={index} id={index} className="tableRowStatic"></li>
         ))}
       </ul>

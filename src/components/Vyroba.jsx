@@ -18,6 +18,8 @@ export function Vyroba({
   const [activeStroj, setActiveStroj] = useState("5os");
   const [isClicked, setClicked] = useState(false);
 
+  const fullHrs = tableIndex.filter((ti) => ti === parseInt(ti));
+
   return (
     <section className="vyroba">
       <VyrobaMenu date={newDate} setNewDate={setNewDate} />
@@ -58,33 +60,17 @@ export function Vyroba({
           <section className="smeny pt-3 ps-3 pe-3">
             <h3>ČAS</h3>
             <ul className="tableCol mt-3 mb-0">
-              {tableIndex.map((index) => {
-                const temp = Number(index);
-                if (temp === Math.floor(temp)) {
-                  return (
-                    <li key={index} id={index} className="tableTimeRow">
-                      {index}:00
-                    </li>
-                  );
-                } else {
-                  const splited = parseInt(index);
-                  return (
-                    <li
-                      key={index}
-                      id={index}
-                      className="tableTimeRow half-hour"
-                    >
-                      {splited}:30
-                    </li>
-                  );
-                }
-              })}
+              {fullHrs.map((hour) => (
+                <li key={hour} id={hour} className="tableTimeRow">
+                  {hour}:00
+                </li>
+              ))}
             </ul>
           </section>
           <div className="stroje d-none d-lg-flex flex-wrap">
             <VyrobaCalendar
               strojId={"5os"}
-              tableIndex={tableIndex}
+              fullHrs={fullHrs}
               newDate={newDate}
               vyroba={vyroba}
               setEditing={setEditing}
@@ -92,8 +78,8 @@ export function Vyroba({
               setClicked={setClicked}
             />
             <VyrobaCalendar
-              strojId={"3os"}
-              tableIndex={tableIndex}
+              strojId={"TBD"}
+              fullHrs={fullHrs}
               newDate={newDate}
               vyroba={vyroba}
               setEditing={setEditing}
@@ -101,8 +87,8 @@ export function Vyroba({
               setClicked={setClicked}
             />
             <VyrobaCalendar
-              strojId={"4os"}
-              tableIndex={tableIndex}
+              strojId={"TBD"}
+              fullHrs={fullHrs}
               newDate={newDate}
               vyroba={vyroba}
               setEditing={setEditing}
@@ -113,7 +99,7 @@ export function Vyroba({
           <div className="stroje d-md-flex d-lg-none">
             <VyrobaCalendar
               strojId={activeStroj}
-              tableIndex={tableIndex}
+              fullHrs={fullHrs}
               newDate={newDate}
               vyroba={vyroba}
               setEditing={setEditing}

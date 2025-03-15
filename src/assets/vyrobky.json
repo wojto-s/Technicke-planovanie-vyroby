@@ -12,87 +12,57 @@
     "bg": "purpleBG"
   },
   {
-    "firma": "Optima",
-    "nazov": "Plošina pre montáž PM50",
-    "cisloVykresu": "7A1B034_0117",
+    "firma": "Kvant",
+    "nazov": "Predny panel - CM IP",
+    "cisloVykresu": "54-24-3449",
     "bg": "yellowBG"
   },
   {
-    "firma": "MechaServis",
-    "nazov": "Senzorové telo ST100",
-    "cisloVykresu": "65-34-7519",
+    "firma": "Kvant",
+    "nazov": "Zadny panel - CM IP",
+    "cisloVykresu": "54-24-3450",
     "bg": "blueBG"
   },
   {
-    "firma": "Technoplast",
-    "nazov": "Závesný modul ZM35",
-    "cisloVykresu": "9C2D048_0214",
+    "firma": "Kvant",
+    "nazov": "Lavy bocny panel - CM IP",
+    "cisloVykresu": "54-24-3451",
     "bg": "redBG"
   },
   {
-    "firma": "VibroTech",
-    "nazov": "Puzdro prevodovky PP20",
-    "cisloVykresu": "33-12-8476",
+    "firma": "Kvant",
+    "nazov": "Pravy bocny panel - CM IP",
+    "cisloVykresu": "54-24-3459",
     "bg": "orangeBG"
   },
   {
-    "firma": "InnovaTools",
-    "nazov": "Nástrojová hlava NH10",
-    "cisloVykresu": "8E5F056_0318",
+    "firma": "Slavia",
+    "nazov": "D_Plate",
+    "cisloVykresu": 30364882,
     "bg": "cyanBG"
   },
   {
-    "firma": "Slavia",
-    "nazov": "Rám stroja RS45",
-    "cisloVykresu": "47-23-6145",
+    "firma": "Kvant",
+    "nazov": "A_Teleso_V2",
+    "cisloVykresu": "0277-001",
     "bg": "pinkBG"
   },
   {
-    "firma": "Slavia",
-    "nazov": "Spojovacia tyč ST15",
-    "cisloVykresu": "4G6H078_0415",
+    "firma": "Kvant",
+    "nazov": "Stol",
+    "cisloVykresu": "0277-002",
     "bg": "brownBG"
   },
   {
-    "firma": "TechnoParts",
-    "nazov": "Mechanický úzaver MU70",
-    "cisloVykresu": "82-56-9457",
+    "firma": "Kvant",
+    "nazov": "Skenerovy drziak KV30-cast Y",
+    "cisloVykresu": "99-23-3427",
     "bg": "lightBlueBG"
   },
   {
-    "firma": "RotorTech",
-    "nazov": "Kryt ovládacieho modulu KM90",
-    "cisloVykresu": "5J7K092_0519",
+    "firma": "TaTech",
+    "nazov": "Trapez",
+    "cisloVykresu": "3-842-512-991",
     "bg": "darkGreenBG"
-  },
-  {
-    "firma": "Microtron",
-    "nazov": "Signalizačná jednotka SJ30",
-    "cisloVykresu": "21-78-3641",
-    "bg": "darkGrayBG"
-  },
-  {
-    "firma": "Technoplast",
-    "nazov": "Nástavec pre frézu NF25",
-    "cisloVykresu": "3L8M104_0613",
-    "bg": "lightGreenBG"
-  },
-  {
-    "firma": "Technoplast",
-    "nazov": "Nosná konzola NK80",
-    "cisloVykresu": "58-19-8352",
-    "bg": "blackBG"
-  },
-  {
-    "firma": "FlexiSystems",
-    "nazov": "Adaptér pre čerpadlo AC40",
-    "cisloVykresu": "6N9P116_0717",
-    "bg": "whiteBG"
-  },
-  {
-    "firma": "Mecano",
-    "nazov": "Ložiskové teleso LT50",
-    "cisloVykresu": "90-43-7268",
-    "bg": "beigeBG"
   }
 ]

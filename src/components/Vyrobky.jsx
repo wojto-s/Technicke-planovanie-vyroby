@@ -20,6 +20,7 @@ export function Vyrobky({ vyrobky, vyrobkySpecs }) {
     const vyrobokFilter = vyrobky.filter(
       (vyrobok) =>
         vyrobok.cisloVykresu
+          .toString()
           .toLowerCase()
           .includes(searchInput.toLowerCase()) ||
         vyrobok.firma.toLowerCase().includes(searchInput.toLowerCase()) ||

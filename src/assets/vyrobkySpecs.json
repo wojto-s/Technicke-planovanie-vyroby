@@ -40,243 +40,83 @@
     "upnutie": "zverak"
   },
   {
-    "cisloVykresu": "7A1B034_0117",
-    "cisloPGM": 9011,
+    "cisloVykresu": "54-24-3449",
+    "cisloPGM": 8356,
     "poloha": 1,
-    "pracovisko": "3os",
-    "cas": 10,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "7A1B034_0117",
-    "cisloPGM": 9012,
-    "poloha": 2,
-    "pracovisko": "5os",
-    "cas": 15,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "65-34-7519",
-    "cisloPGM": 9214,
-    "poloha": 1,
-    "pracovisko": "4os",
-    "cas": 12,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "65-34-7519",
-    "cisloPGM": 9215,
-    "poloha": 2,
-    "pracovisko": "3os",
-    "cas": 18,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "9C2D048_0214",
-    "cisloPGM": 8423,
-    "poloha": 1,
-    "pracovisko": "3os",
-    "cas": 8,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "9C2D048_0214",
-    "cisloPGM": 8424,
-    "poloha": 2,
-    "pracovisko": "3os",
-    "cas": 14,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "33-12-8476",
-    "cisloPGM": 9137,
-    "poloha": 1,
-    "pracovisko": "5os",
-    "cas": 20,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "33-12-8476",
-    "cisloPGM": 9138,
-    "poloha": 2,
-    "pracovisko": "4os",
-    "cas": 25,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "8E5F056_0318",
-    "cisloPGM": 8451,
-    "poloha": 1,
-    "pracovisko": "3os",
-    "cas": 9,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "8E5F056_0318",
-    "cisloPGM": 8452,
-    "poloha": 2,
     "pracovisko": "5os",
     "cas": 11,
-    "upnutie": "prípravok"
+    "upnutie": "pripravok"
   },
   {
-    "cisloVykresu": "47-23-6145",
-    "cisloPGM": 7312,
-    "poloha": 1,
-    "pracovisko": "3os",
-    "cas": 13,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "47-23-6145",
-    "cisloPGM": 7313,
-    "poloha": 2,
-    "pracovisko": "3os",
-    "cas": 16,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "4G6H078_0415",
-    "cisloPGM": 6635,
-    "poloha": 1,
-    "pracovisko": "4os",
-    "cas": 14,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "4G6H078_0415",
-    "cisloPGM": 6636,
-    "poloha": 2,
-    "pracovisko": "3os",
-    "cas": 18,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "82-56-9457",
-    "cisloPGM": 9471,
+    "cisloVykresu": "54-24-3450",
+    "cisloPGM": 8327,
     "poloha": 1,
     "pracovisko": "5os",
-    "cas": 7,
-    "upnutie": "zverák"
+    "cas": 17,
+    "upnutie": "pripravok"
   },
   {
-    "cisloVykresu": "82-56-9457",
-    "cisloPGM": 9472,
-    "poloha": 2,
-    "pracovisko": "3os",
-    "cas": 12,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "5J7K092_0519",
-    "cisloPGM": 9001,
-    "poloha": 1,
-    "pracovisko": "3os",
-    "cas": 15,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "5J7K092_0519",
-    "cisloPGM": 9002,
-    "poloha": 2,
-    "pracovisko": "5os",
-    "cas": 18,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "21-78-3641",
-    "cisloPGM": 10101,
-    "poloha": 1,
-    "pracovisko": "3os",
-    "cas": 10,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "21-78-3641",
-    "cisloPGM": 10102,
-    "poloha": 2,
-    "pracovisko": "4os",
-    "cas": 14,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "3L8M104_0613",
-    "cisloPGM": 10201,
-    "poloha": 1,
-    "pracovisko": "3os",
-    "cas": 9,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "3L8M104_0613",
-    "cisloPGM": 10202,
-    "poloha": 2,
-    "pracovisko": "5os",
-    "cas": 11,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "58-19-8352",
-    "cisloPGM": 10301,
-    "poloha": 1,
-    "pracovisko": "3os",
-    "cas": 13,
-    "upnutie": "zverák"
-  },
-  {
-    "cisloVykresu": "58-19-8352",
-    "cisloPGM": 10302,
-    "poloha": 2,
-    "pracovisko": "3os",
-    "cas": 16,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "6N9P116_0717",
-    "cisloPGM": 10401,
+    "cisloVykresu": "54-24-3451",
+    "cisloPGM": 8139,
     "poloha": 1,
     "pracovisko": "5os",
-    "cas": 20,
-    "upnutie": "zverák"
+    "cas": 22,
+    "upnutie": "pripravok"
   },
   {
-    "cisloVykresu": "6N9P116_0717",
-    "cisloPGM": 10402,
-    "poloha": 2,
-    "pracovisko": "4os",
-    "cas": 25,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "90-43-7268",
-    "cisloPGM": 10501,
+    "cisloVykresu": "54-24-3459",
+    "cisloPGM": 8138,
     "poloha": 1,
-    "pracovisko": "3os",
-    "cas": 12,
-    "upnutie": "zverák"
+    "pracovisko": "5os",
+    "cas": 22,
+    "upnutie": "pripravok"
   },
   {
-    "cisloVykresu": "90-43-7268",
-    "cisloPGM": 10502,
-    "poloha": 2,
-    "pracovisko": "3os",
-    "cas": 18,
-    "upnutie": "prípravok"
-  },
-  {
-    "cisloVykresu": "99-23-3426",
-    "cisloPGM": 8251,
-    "poloha": 3,
-    "pracovisko": "3os",
-    "cas": 6,
+    "cisloVykresu": 30364882,
+    "cisloPGM": 8579,
+    "poloha": 1,
+    "pracovisko": "5os",
+    "cas": 60,
     "upnutie": "zverak"
   },
   {
-    "cisloVykresu": "99-23-3426",
-    "cisloPGM": 8251,
-    "poloha": 3,
+    "cisloVykresu": "0277-001",
+    "cisloPGM": 9993,
+    "poloha": 1,
     "pracovisko": "5os",
-    "cas": 6,
+    "cas": 13,
+    "upnutie": "pripravok"
+  },
+  {
+    "cisloVykresu": "0277-002",
+    "cisloPGM": 9988,
+    "poloha": 1,
+    "pracovisko": "5os",
+    "cas": 4,
+    "upnutie": "pripravok"
+  },
+  {
+    "cisloVykresu": "99-23-3427",
+    "cisloPGM": 8259,
+    "poloha": 1,
+    "pracovisko": "5os",
+    "cas": 9,
+    "upnutie": "zverak"
+  },
+  {
+    "cisloVykresu": "99-23-3428",
+    "cisloPGM": 8258,
+    "poloha": 2,
+    "pracovisko": "5os",
+    "cas": 5,
+    "upnutie": "zverak"
+  },
+  {
+    "cisloVykresu": "3-842-512-991",
+    "cisloPGM": 9112,
+    "poloha": 1,
+    "pracovisko": "5os",
+    "cas": 2,
     "upnutie": "zverak"
   }
 ]

@@ -13,7 +13,12 @@ export function VyrobkySpec({ cisloVykresu, vyrobkySpecs, itemSpecification }) {
       }
     }
     const itemsReduced = [...new Set(items)];
-    return itemsReduced.map((item) => <span className="me-1">{item},</span>);
+    return itemsReduced.map((item, index) => (
+      <span className="me-1" key={item}>
+        {item}
+        {index < itemsReduced.length - 1 && ","}
+      </span>
+    ));
   };
 
   return (

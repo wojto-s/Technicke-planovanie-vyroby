@@ -149,14 +149,27 @@ export function NewVyrobaPrehlad({
     // Check či sú voľné dátum/stroj/časový interval
     vyroba.forEach((vyrobok) => {
       const endElem = vyrobok.workPeriods.length - 1;
-      const checkStartTime = parseInt(
+      let checkStartTime = Number(
         vyrobok.workPeriods[0].startTime.split(":")[0],
         10
       );
-      const checkEndTime = parseInt(
+
+      vyrobok.workPeriods[endElem].endTime.split(":")[1] === "30"
+        ? (checkStartTime += 0.5)
+        : checkStartTime;
+
+      let checkEndTime = Number(
         vyrobok.workPeriods[endElem].endTime.split(":")[0],
         10
       );
+      vyrobok.workPeriods[endElem].endTime.split(":")[1] === "30"
+        ? (checkEndTime += 0.5)
+        : checkEndTime;
+
+      let FinalEndTime = Number(workPeriods[endElem].endTime.split(":")[0], 10);
+      workPeriods[endElem].endTime.split(":")[1] === "30"
+        ? (FinalEndTime += 0.5)
+        : FinalEndTime;
 
       workPeriods.forEach((wp) => {
         // Zisťujeme či sa nám vo WP nachádza dátum ktorý potrebujeme, ak hej dostaneme true a či náhodou ho needitujeme
@@ -171,8 +184,7 @@ export function NewVyrobaPrehlad({
               (currentVyrobok.startTime >= checkStartTime &&
                 currentVyrobok.startTime < checkEndTime) || // nový čas začiatku je v existujúcom intervale
               (currentVyrobok.startTime <= checkStartTime &&
-                parseInt(workPeriods[endWork].endTime.split(":")[0], 10) >=
-                  checkStartTime) // nový interval prekrýva existujúci
+                FinalEndTime > checkStartTime) // nový interval prekrýva existujúci
             ) {
               isConflict = true;
             }
@@ -250,7 +262,8 @@ export function NewVyrobaPrehlad({
           Začiatok výroby:{" "}
           <span className="fw-bold">
             {currentVyrobok.startDate.toISOString().split("T")[0]}{" "}
-            {currentVyrobok.startTime}:00
+            {currentVyrobok.startTime.split(".")[0]}
+            {currentVyrobok.startTime.split(".")[1] === "5" ? ":30" : ":00"}
           </span>
         </h6>
         <h6 className="fw-normal">
