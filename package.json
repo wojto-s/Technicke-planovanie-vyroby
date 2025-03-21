@@ -38,7 +38,7 @@
     "productName": "TPV",
     "copyright": "Copyright © 2023 ${author}",
     "win": {
-      "icon": "build/icon.png"
+      "icon": "icon.png"
     },
     "mac": {
       "category": "public.app-category.utilities"
@@ -50,14 +50,24 @@
     "files": [
       "dist/**/*",
       "electron/**/*",
+      "server/**/*",
       "node_modules/react-router-dom/**/*",
-      "node_modules/electron-router-dom/**/*",
       "dist_electron/**/*",
       "electron/preload.js"
     ],
     "directories": {
       "buildResources": "assets",
       "output": "dist_electron"
-    }
+    },
+    "extraResources": [
+      {
+        "from": "src/assets/vyroba.json",
+        "to": "server/data/vyroba.json"
+      },
+      {
+        "from": "server",
+        "to": "server"
+      }
+    ]
   }
 }

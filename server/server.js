@@ -5,6 +5,7 @@ const path = require("path");
 const { MongoClient } = require("mongodb");
 
 const app = express();
+const PORT = 8000;
 
 app.use(cors());
 app.use(express.json());
@@ -43,8 +44,16 @@ async function connectToMongoDB() {
   }
 }
 
+function getFilePath() {
+  if (process.env.NODE_ENV.trim() == "dev") {
+    return path.join(__dirname, "../src/assets/vyroba.json");
+  } else {
+    return path.join(__dirname, "data", "vyroba.json"); // V build verzii bude vyroba.json mimo .asar
+  }
+}
+
 connectToMongoDB();
-/*
+
 app.get("/getVyrobky", async (req, res) => {
   try {
     const collection = database.collection("vyrobky");
@@ -55,7 +64,7 @@ app.get("/getVyrobky", async (req, res) => {
     res.status(500).json({ error: "Chyba pri získavaní dát" });
   }
 });
-*/
+
 app.post("/setVyrobky", async (req, res) => {
   try {
     const collection = database.collection("vyrobkySpecs");
@@ -70,7 +79,8 @@ app.post("/setVyrobky", async (req, res) => {
 });
 
 app.post("/updateVyroba", (req, res) => {
-  const filePath = path.join(__dirname, "../src/assets/vyroba.json");
+  //const filePath = path.join(__dirname, "../src/assets/vyroba.json");
+  const filePath = getFilePath();
 
   fs.writeFile(filePath, JSON.stringify(req.body), (writeErr) => {
     if (writeErr) {
@@ -81,4 +91,20 @@ app.post("/updateVyroba", (req, res) => {
   });
 });
 
-app.listen(8000, () => console.log(`Server is running on port 8000.`));
+process.on("uncaughtException", (err) => {
+  console.error("Uncaught exception:", err);
+  process.exit(1);
+});
+
+//app.listen(8000, () => console.log(`Server is running on port 8000.`));
+try {
+  app
+    .listen(PORT, () => {
+      console.log(`Server beží na porte ${PORT}`);
+    })
+    .on("error", (err) => {
+      console.error("Chyba pri spustení servera:", err);
+    });
+} catch (err) {
+  console.error("Exception pri spustení servera:", err);
+}

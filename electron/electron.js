@@ -1,6 +1,8 @@
 const path = require("path");
 const { app, BrowserWindow } = require("electron");
+const { spawn } = require("child_process");
 
+let serverProcess;
 const isDev = process.env.IS_DEV == "true" ? true : false;
 
 function createWindow() {
@@ -15,6 +17,7 @@ function createWindow() {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,
       contextIsolation: false,
+      sandbox: false,
     },
   });
 
@@ -29,13 +32,30 @@ function createWindow() {
       : `file://${path.join(__dirname, "../dist/index.html")}`
   );
 
-  // Open the DevTools.
   if (isDev) {
     //mainWindow.webContents.openDevTools();
   }
 }
 
+function getServerPath() {
+  if (isDev) {
+    return path.join(__dirname, "../server/server.js"); // Pre vývoj
+  } else {
+    return path.join(process.resourcesPath, "server", "server.js"); // Pre produkciu
+  }
+}
+
+function runServer() {
+  const serverPath = getServerPath();
+  serverProcess = spawn("node", [serverPath], {
+    detached: true,
+    stdio: "ignore",
+  });
+  serverProcess.unref();
+}
+
 app.whenReady().then(() => {
+  runServer();
   createWindow();
   app.on("activate", function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
@@ -43,6 +63,9 @@ app.whenReady().then(() => {
 });
 
 app.on("window-all-closed", () => {
+  if (serverProcess) {
+    serverProcess.kill("SIGINT"); // Správne ukončenie procesu
+  }
   if (process.platform !== "darwin") {
     app.quit();
   }

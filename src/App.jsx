@@ -87,27 +87,38 @@ function App() {
     });
   };
 */
-  /*
+
   const getMongoData = async () => {
-    await axios
-      .get("http://localhost:8000/getVyrobky")
-      .then((res) => console.log(res.data))
-      .catch((e) => console.log(e));
+    /*await axios
+          .get("http://localhost:8000/getVyrobky")
+          .then((res) => console.log(res.data))
+          .catch((e) => console.log(e));*/
+    let retries = 10;
+    while (retries > 0) {
+      try {
+        const res = await axios.get("http://localhost:8000/getVyrobky");
+        console.log(res.data);
+        return res.data;
+      } catch (e) {
+        await new Promise((res) => setTimeout(res, 500));
+      }
+      retries--;
+    }
+    return null;
   };
 
-  
+  /*
   const setMongoVyrobky = async (data) => {
     await axios
       .post("http://localhost:8000/setVyrobky", data)
       .then((res) => console.log(res))
       .catch((e) => console.log(e));
   };
- 
+ */
   useEffect(() => {
     getMongoData();
     //setMongoVyrobky(vyrobky);
   }, []);
-  */
 
   //ROUTY
   return (
